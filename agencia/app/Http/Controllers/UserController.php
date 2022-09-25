@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Hotel;
-
+use App\Models\User;
 use App\Models\City;
 
-class HotelController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +15,10 @@ class HotelController extends Controller
      */
     public function index()
     {
-        $hotels = Hotel::all();
+        $users = User::all();
 
         $cities = City::all();
-        return view('hotel.index',compact('cities'))->with('hotels',$hotels);
+        return view('user.index',compact('cities'))->with('users',$users);
     }
 
     /**
@@ -30,7 +29,7 @@ class HotelController extends Controller
     public function create()
     {
         $cities = City::all();
-        return view('hotel.create',compact('cities'));
+        return view('user.create',compact('cities'));
     }
 
     /**
@@ -41,18 +40,16 @@ class HotelController extends Controller
      */
     public function store(Request $request)
     {
-        $hotels = new Hotel();
-        $hotels->hotel_name = $request->get('hotel_name');
-        $hotels->room_number = $request->get('room_number');
-        $hotels->price_per_night = $request->get('price_per_night');
-        $hotels->hotel_email = $request->get('hotel_email');
-        $hotels->hotel_phone = $request->get('hotel_phone');
-        $hotels->room_types = $request->get('room_types');
-        $hotels->city_id = $request->get('city_id');
+        $users = new User();
+        $users->name = $request->get('name');
+        $users->last_name = $request->get('last_name');
+        $users->phone = $request->get('phone');
+        $users->email = $request->get('email');
+        $users->password = $request->get('password');
 
-        $hotels->save();
+        $users->save();
 
-        return redirect('/hotels');
+        return redirect('/users');
     }
 
     /**
@@ -74,9 +71,9 @@ class HotelController extends Controller
      */
     public function edit($id)
     {
-        $hotel = Hotel::find($id);
+        $user = User::find($id);
         $cities = City::all();
-        return view('hotel.edit', compact('cities'))->with('hotel',$hotel);
+        return view('user.edit', compact('cities'))->with('user',$user);
     }
 
     /**
@@ -88,18 +85,16 @@ class HotelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $hotel = Hotel::find($id);
-        $hotel->hotel_name = $request->get('hotel_name');
-        $hotel->room_number = $request->get('room_number');
-        $hotel->price_per_night = $request->get('price_per_night');
-        $hotel->hotel_email = $request->get('hotel_email');
-        $hotel->hotel_phone = $request->get('hotel_phone');
-        $hotel->room_types = $request->get('room_types');
-        $hotel->city_id = $request->get('city_id');
+        $user = User::find($id);
+        $user->name = $request->get('name');
+        $user->last_name = $request->get('last_name');
+        $user->phone = $request->get('phone');
+        $user->email = $request->get('email');
+        $user->password = $request->get('password');
 
-        $hotel->save();
+        $user->save();
 
-        return redirect('/hotels');
+        return redirect('/users');
     }
 
     /**
@@ -110,9 +105,9 @@ class HotelController extends Controller
      */
     public function destroy($id)
     {
-        $hotel = Hotel::find($id);
-        $hotel->delete();
+        $user = User::find($id);
+        $user->delete();
 
-        return redirect('/hotels');
+        return redirect('/users');
     }
 }

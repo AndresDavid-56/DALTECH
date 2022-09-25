@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use App\Models\Guide;
+
+use App\Models\City;
 
 class GuideController extends Controller
 {
@@ -13,7 +17,10 @@ class GuideController extends Controller
      */
     public function index()
     {
-        //
+        $guides = Guide::all();
+
+        $cities = City::all();
+        return view('guide.index',compact('cities'))->with('guides',$guides);
     }
 
     /**
@@ -23,7 +30,8 @@ class GuideController extends Controller
      */
     public function create()
     {
-        //
+        $cities = City::all();
+        return view('guide.create',compact('cities'));
     }
 
     /**
@@ -34,7 +42,17 @@ class GuideController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $guides = new Guide();
+        $guides->guide_name = $request->get('guide_name');
+        $guides->price_per_day = $request->get('price_per_day');
+        $guides->guide_email = $request->get('guide_email');
+        $guides->guide_phone = $request->get('guide_phone');
+        $guides->guide_available = $request->get('guide_available');
+        $guides->city_id = $request->get('city_id');
+
+        $guides->save();
+
+        return redirect('/guides');
     }
 
     /**
@@ -56,7 +74,9 @@ class GuideController extends Controller
      */
     public function edit($id)
     {
-        //
+        $guide = Guide::find($id);
+        $cities = City::all();
+        return view('guide.edit', compact('cities'))->with('guide',$guide);
     }
 
     /**
@@ -68,7 +88,17 @@ class GuideController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $guide = Guide::find($id);
+        $guide->guide_name = $request->get('guide_name');
+        $guide->price_per_day = $request->get('price_per_day');
+        $guide->guide_email = $request->get('guide_email');
+        $guide->guide_phone = $request->get('guide_phone');
+        $guide->guide_available = $request->get('guide_available');
+        $guide->city_id = $request->get('city_id');
+
+        $guide->save();
+
+        return redirect('/guides');
     }
 
     /**
@@ -79,6 +109,9 @@ class GuideController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $guide = Guide::find($id);
+        $guide->delete();
+
+        return redirect('/guides');
     }
 }

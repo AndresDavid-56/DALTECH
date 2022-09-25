@@ -3,6 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Package;
+
+use App\Models\Hotel;
+use App\Models\City;
+use App\Models\Guide;
+use App\Models\User;
+use App\Models\Transport;
+
 
 class PackageController extends Controller
 {
@@ -13,7 +21,10 @@ class PackageController extends Controller
      */
     public function index()
     {
-        //
+        $packages = Package::all();
+
+        $cities = City::all();
+        return view('package.index',compact('cities'))->with('packages',$packages);
     }
 
     /**
@@ -23,7 +34,13 @@ class PackageController extends Controller
      */
     public function create()
     {
-        //
+        $cities = City::all();
+        $users = User::all();
+        $transports = Transport::all();
+        $guides = Guide::all();
+        $hotels = Hotel::all();
+        return view('package.create',compact('cities','guides','transports',
+    'hotels','users'));
     }
 
     /**
@@ -34,7 +51,23 @@ class PackageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $packages = new Package();
+        $packages->start_date = $request->get('start_date');
+        $packages->exit_date = $request->get('exit_date');
+        $packages->subtotal = $request->get('subtotal');
+        $packages->adults_number = $request->get('adults_number');
+        $packages->children_number = $request->get('children_number');
+        $packages->elderly_number = $request->get('elderly_number');
+        $packages->from = $request->get('from');
+        $packages->to = $request->get('to');
+        $packages->guides_id = $request->get('guides_id');
+        $packages->transports_id = $request->get('transports_id');
+        $packages->hotels_id = $request->get('hotels_id');
+        $packages->user_id = $request->get('user_id');
+
+        $packages->save();
+
+        return redirect('/packages');
     }
 
     /**
@@ -56,7 +89,15 @@ class PackageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $package = Package::find($id);
+
+        $cities = City::all();
+        $users = User::all();
+        $transports = Transport::all();
+        $guides = Guide::all();
+        $hotels = Hotel::all();
+        return view('package.create',compact('cities','guides','transports',
+    'hotels','users'));
     }
 
     /**
@@ -68,7 +109,23 @@ class PackageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $package = Package::find($id);
+        $package->start_date = $request->get('start_date');
+        $package->exit_date = $request->get('exit_date');
+        $package->subtotal = $request->get('subtotal');
+        $package->adults_number = $request->get('adults_number');
+        $package->children_number = $request->get('children_number');
+        $package->elderly_number = $request->get('elderly_number');
+        $package->from = $request->get('from');
+        $package->to = $request->get('to');
+        $package->guides_id = $request->get('guides_id');
+        $package->transports_id = $request->get('transports_id');
+        $package->hotels_id = $request->get('hotels_id');
+        $package->user_id = $request->get('user_id');
+
+        $package->save();
+
+        return redirect('/packages');
     }
 
     /**
@@ -79,6 +136,9 @@ class PackageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $package = Package::find($id);
+        $package->delete();
+
+        return redirect('/packages');
     }
 }

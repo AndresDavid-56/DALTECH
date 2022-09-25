@@ -19,6 +19,11 @@ Route::get('/', function () {
 });
 
 Route::resource('cities','App\Http\Controllers\CityController');
+Route::resource('hotels','App\Http\Controllers\HotelController');
+Route::resource('guides','App\Http\Controllers\GuideController');
+Route::resource('transports','App\Http\Controllers\TransportController');
+Route::resource('packages','App\Http\Controllers\PackageController');
+Route::resource('users','App\Http\Controllers\UserController');
 
 Route::middleware([
     'auth:sanctum',
