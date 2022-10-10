@@ -17,7 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('about', function () {
+    return view('about');
+});
+Route::get('contact', function () {
+    return view('contact');
+});
 
+//Rutas para visualizar CRUD de los elementos
 Route::resource('cities','App\Http\Controllers\CityController');
 Route::resource('hotels','App\Http\Controllers\HotelController');
 Route::resource('guides','App\Http\Controllers\GuideController');

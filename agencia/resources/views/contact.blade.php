@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
-    <title>Home</title>
+    <title>Contact Us</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
-    <link rel="stylesheet" type="{{ asset('/css/text/css') }}" href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700%7CPoppins:400%7CTeko:300,400">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700%7CPoppins:400%7CTeko:300,400">
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/fonts.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
   </head>
-
   <body>
-    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="{{ asset('images/ie8-panel/warning_bar_0000_us.jpg') }}" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <div class="preloader">
       <div class="preloader-body">
         <div class="cssload-container">
@@ -26,7 +25,7 @@
       </div>
     </div>
     <div class="page">
-      
+      <!-- Page Header-->
       <header class="section page-header">
         <!-- RD Navbar-->
         <div class="rd-navbar-wrap">
@@ -59,17 +58,7 @@
                         <div class="unit-body"><a class="link-phone" href="tel:#">+1 323-913-4688</a></div>
                       </div>
                     </li>
-                  </ul>
-                  @if (Route::has('login'))
-                    @auth
-                    <a class="button button-md button-default-outline-2 button-ujarak" href="{{ url('/dashboard') }}">Dashboard</a>
-                    @else
-                    <a class="button button-md button-default-outline-2 button-ujarak" href="{{ route('login') }}">Iniciar Sesión</a>
-                    @if (Route::has('register'))
-                    <a class="button button-md button-default-outline-2 button-ujarak" href="{{ route('register') }}">Registarse</a>
-                    @endif
-                @endauth
-                @endif
+                  </ul><a class="button button-md button-default-outline-2 button-ujarak" href="{{ route('register') }}">Registarse</a>
                 </div>
               </div>
             </div>
@@ -84,13 +73,13 @@
                   </ul>
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
-                    <li class="rd-nav-item active"><a class="rd-nav-link" href="/">Inicio</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="/">Inicio</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="about">Sobre Nosotros</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="#">Proximamente</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="contact">Contáctanos</a>
+                    <li class="rd-nav-item active"><a class="rd-nav-link" href="contact">Contáctanos</a>
                     </li>
                   </ul>
                 </div>
@@ -99,59 +88,66 @@
           </nav>
         </div>
       </header>
+      <!-- RD Google Map-->
+      <section class="section section-fluid">
+        <div class="google-map-container" data-zoom="5" data-icon="images/gmap_marker.png" data-icon-active="images/gmap_marker.png" data-center="9870 St Vincent Place, Glasgow, DC 45 Fr 45." data-styles="[{&quot;featureType&quot;:&quot;landscape&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#FFBB00&quot;},{&quot;saturation&quot;:43.400000000000006},{&quot;lightness&quot;:37.599999999999994},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#FFC200&quot;},{&quot;saturation&quot;:-61.8},{&quot;lightness&quot;:45.599999999999994},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;road.arterial&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#FF0300&quot;},{&quot;saturation&quot;:-100},{&quot;lightness&quot;:51.19999999999999},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;road.local&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#FF0300&quot;},{&quot;saturation&quot;:-100},{&quot;lightness&quot;:52},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;water&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#0078FF&quot;},{&quot;saturation&quot;:-13.200000000000003},{&quot;lightness&quot;:2.4000000000000057},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;poi&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#00FF6A&quot;},{&quot;saturation&quot;:-1.0989010989011234},{&quot;lightness&quot;:11.200000000000017},{&quot;gamma&quot;:1}]}]">
+          <div class="google-map"></div>
+          <ul class="google-map-markers">
+            <li data-location="9870 St Vincent Place, Glasgow, DC 45 Fr 45." data-description="9870 St Vincent Place, Glasgow"></li>
+          </ul>
+        </div>
+      </section>
 
-      <!-- Page Content -->
-      <x-guest-layout>
-    
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
-
-        <x-jet-validation-errors class="mb-4" />
-
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
+      <!-- Contact information-->
+      <section class="section section-sm section-first bg-default">
+        <div class="container">
+          <div class="row row-30 justify-content-center">
+            <div class="col-sm-8 col-md-6 col-lg-4">
+              <article class="box-contacts">
+                <div class="box-contacts-body">
+                  <div class="box-contacts-icon fl-bigmug-line-cellphone55"></div>
+                  <div class="box-contacts-decor"></div>
+                  <p class="box-contacts-link"><a href="tel:#">+1 323-913-4688</a></p>
+                  <p class="box-contacts-link"><a href="tel:#">+1 323-888-4554</a></p>
+                </div>
+              </article>
             </div>
-        @endif
-
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            <div>
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+            <div class="col-sm-8 col-md-6 col-lg-4">
+              <article class="box-contacts">
+                <div class="box-contacts-body">
+                  <div class="box-contacts-icon fl-bigmug-line-up104"></div>
+                  <div class="box-contacts-decor"></div>
+                  <p class="box-contacts-link"><a href="#">4730 Crystal Springs Dr, Los Angeles, CA 90027</a></p>
+                </div>
+              </article>
             </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+            <div class="col-sm-8 col-md-6 col-lg-4">
+              <article class="box-contacts">
+                <div class="box-contacts-body">
+                  <div class="box-contacts-icon fl-bigmug-line-chat55"></div>
+                  <div class="box-contacts-decor"></div>
+                  <p class="box-contacts-link"><a href="mailto:#">mail@demolink.org</a></p>
+                  <p class="box-contacts-link"><a href="mailto:#">info@demolink.org</a></p>
+                </div>
+              </article>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-jet-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
+      <!-- Contact Form-->
+      <section class="section section-sm section-last bg-default text-left">
+        <div class="container">
+          <article class="title-classic">
+            <div class="title-classic-title">
+              <h3>Get in touch</h3>
             </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-jet-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-jet-button>
+            <div class="title-classic-text">
+              <p>If you have any questions, just fill in the contact form, and we will answer you shortly.</p>
             </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
-
-    
+          </article>
+        </div>
+      </section>
 
       <!-- Page Footer-->
       <footer class="section footer-corporate context-dark">
