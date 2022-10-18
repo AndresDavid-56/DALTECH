@@ -9,6 +9,10 @@ use App\Models\City;
 
 class HotelController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+        $this->middleware('can:hotel.index');
+    }
     /**
      * Display a listing of the resource.
      *

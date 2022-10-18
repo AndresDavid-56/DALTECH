@@ -46,9 +46,9 @@
                 </div>
                 <div class="rd-navbar-aside-right rd-navbar-collapse">
                   
-                  @if (Route::has('login'))
+                @if (Route::has('login'))
                     @auth
-                    <a class="button button-md button-default-outline-2 button-ujarak" href="{{ url('/dashboard') }}">Dashboard</a>
+                    <a class="button button-md button-default-outline-2 button-ujarak" href="{{ url('/dashboard') }}">Mi Cuenta</a>
                     @else
                     <a class="button button-md button-default-outline-2 button-ujarak" href="{{ route('login') }}">Iniciar Sesión</a>
                     @if (Route::has('register'))

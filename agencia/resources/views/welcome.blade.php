@@ -47,7 +47,7 @@
                   
                   @if (Route::has('login'))
                     @auth
-                    <a class="button button-md button-default-outline-2 button-ujarak" href="{{ url('/dashboard') }}">Dashboard</a>
+                    <a class="button button-md button-default-outline-2 button-ujarak" href="{{ url('/dashboard') }}">Mi Cuenta</a>
                     @else
                     <a class="button button-md button-default-outline-2 button-ujarak" href="{{ route('login') }}">Iniciar Sesión</a>
                     @if (Route::has('register'))
@@ -98,7 +98,7 @@
                     <h2 class="oh font-weight-light" data-caption-animate="slideInUp" data-caption-delay="100"><span>Conoce</span><span class="font-weight-bold"> El país</span></h2>
                     @if (Route::has('login')) 
                     @auth
-                    <a class="button button-default-outline button-ujarak" href="#" data-caption-animate="fadeInLeft" data-caption-delay="0">Saber más</a>
+                    <a class="button button-default-outline button-ujarak" href="city_choose" data-caption-animate="fadeInLeft" data-caption-delay="0">Saber más</a>
                     @else
                     @endauth
                     @endif
@@ -116,7 +116,7 @@
                     <h2 class="oh font-weight-light" data-caption-animate="slideInUp" data-caption-delay="100"><span>Mejora</span><span class="font-weight-bold"> Tu experiencia al viajar</span></h2>
                     @if (Route::has('login')) 
                     @auth
-                    <a class="button button-default-outline button-ujarak" href="#" data-caption-animate="fadeInLeft" data-caption-delay="0">Saber más</a>
+                    <a class="button button-default-outline button-ujarak" href="city_choose" data-caption-animate="fadeInLeft" data-caption-delay="0">Saber más</a>
                     @else
                     @endauth
                     @endif
@@ -134,7 +134,7 @@
                     <h2 class="oh font-weight-light" data-caption-animate="slideInUp" data-caption-delay="100"><span>Elige</span><span class="font-weight-bold"> Tú recorrido</span></h2>
                     @if (Route::has('login')) 
                     @auth
-                    <a class="button button-default-outline button-ujarak" href="#" data-caption-animate="fadeInLeft" data-caption-delay="0">Saber más</a>
+                    <a class="button button-default-outline button-ujarak" href="city_choose" data-caption-animate="fadeInLeft" data-caption-delay="0">Saber más</a>
                     @else
                     @endauth
                     @endif
@@ -155,28 +155,28 @@
               <div class="row justify-content-center">
                 <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
                   <ul class="list-marked-2 box-categories-list">
-                    <li><a href="#"><img src="images/quito.png" alt="" width="368" height="420"/></a>
+                    <li><a href="city_choose"><img src="images/quito.png" alt="" width="368" height="420"/></a>
                       <h5 class="box-categories-title">Quito</h5>
                     </li>
                   </ul>
                 </div>
                 <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
                   <ul class="list-marked-2 box-categories-list">
-                    <li><a href="#"><img src="images/guayaquil.png" alt="" width="368" height="420"/></a>
+                    <li><a href="city_choose"><img src="images/guayaquil.png" alt="" width="368" height="420"/></a>
                       <h5 class="box-categories-title">Guayaquil</h5>
                     </li>
                   </ul>
                 </div>
                 <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
                   <ul class="list-marked-2 box-categories-list">
-                    <li><a href="#"><img src="images/cuenca.png" alt="" width="368" height="420"/></a>
+                    <li><a href="city_choose"><img src="images/cuenca.png" alt="" width="368" height="420"/></a>
                       <h5 class="box-categories-title">Cuenca</h5>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
-          </div><a class="link-classic wow fadeInUp" href="#">Otros Destinos<span></span></a>
+          </div><a class="link-classic wow fadeInUp" href="city_choose">Otros Destinos<span></span></a>
           <!-- Owl Carousel-->
         </div>
       </section>
@@ -203,15 +203,11 @@
                     <div class="tab-pane fade show active" id="tabs-7-1">
                       <p>Viajando Juntos se compromete a brindar a nuestros clientes lo mejor en paquetes de viaje de valor y calidad. Nos apasiona viajar y compartir contigo las maravillas de nunestro País.</p>
                       <p>Estamos orgullosos de ofrecer una excelente calidad y una excelente relación calidad-precio en nuestros tours, que le brindan la oportunidad de experimentar el destino elegido de una manera auténtica y emocionante.</p>
-                      <div class="group-md group-middle"><a class="button button-secondary button-pipaluk" href="contact">Saber más</a></div>
+                      <div class="group-md group-middle"><a class="button button-secondary button-pipaluk" href="city_choose">Saber más</a></div>
                     </div>
                     <div class="tab-pane fade" id="tabs-7-2">
                       <p>Estamos orgullosos de ofrecer una excelente calidad y una excelente relación calidad-precio en nuestros tours, que le brindan la oportunidad de experimentar el destino elegido de una manera auténtica y emocionante.</p>
-                      <div class="group-md group-middle"><a class="button button-secondary button-pipaluk" href="contact">Get in Touch</a><a class="button button-black-outline button-md" href="about">Read More</a></div>
-                    </div>
-                    <div class="tab-pane fade" id="tabs-7-3">
-                      <p>Our mission is to provide the ultimate travel planning experience while becoming a one-stop shop for every travel service available in the industry.</p>
-                      <div class="group-md group-middle"><a class="button button-secondary button-pipaluk" href="contact">Get in Touch</a><a class="button button-black-outline button-md" href="about">Read More</a></div>
+                      <div class="group-md group-middle"><a class="button button-secondary button-pipaluk" href="city_choose">Get in Touch</a><a class="button button-black-outline button-md" href="about">Read More</a></div>
                     </div>
                   </div>
                 </div>

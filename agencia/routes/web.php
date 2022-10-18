@@ -24,6 +24,32 @@ Route::get('contact', function () {
     return view('contact');
 });
 
+Route::get('payment', function () {
+    return view('payment');
+});
+
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/city_choose', function () {
+        return view('city_choose');
+    })->name('city_choose');
+});
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/package_choose', 'App\Http\Controllers\PackageController@showAll' ,function () {
+        return view('package_choose');
+    })->name('package_choose');
+});
+
 //Rutas para visualizar CRUD de los elementos
 Route::resource('cities','App\Http\Controllers\CityController');
 Route::resource('hotels','App\Http\Controllers\HotelController');
@@ -38,6 +64,6 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('dash.index');
     })->name('dashboard');
 });

@@ -8,6 +8,10 @@ use App\Models\City;
 
 class UserController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+        $this->middleware('can:user.index');
+    }
     /**
      * Display a listing of the resource.
      *
