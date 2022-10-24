@@ -11,9 +11,15 @@ use App\Models\Guide;
 use App\Models\User;
 use App\Models\Transport;
 
-
 class PackageController extends Controller
 {
+
+
+    public function __construct(){
+        $this->middleware('auth');
+        $this->middleware('can:package.index')->only('index');
+        $this->middleware('can:package.edit')->only('edit','create','destroy');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -22,9 +28,22 @@ class PackageController extends Controller
     public function index()
     {
         $packages = Package::all();
-
         $cities = City::all();
         return view('package.index',compact('cities'))->with('packages',$packages);
+    }
+
+    public function showAll()
+    {
+        $packages = Package::all();
+
+        $cities = City::all();
+        $users = User::all();
+        $transports = Transport::all();
+        $guides = Guide::all();
+        $hotels = Hotel::all();
+
+        return view('/package_choose',compact('cities','guides','transports',
+    'hotels','users'))->with('packages',$packages);
     }
 
     /**
@@ -96,8 +115,8 @@ class PackageController extends Controller
         $transports = Transport::all();
         $guides = Guide::all();
         $hotels = Hotel::all();
-        return view('package.create',compact('cities','guides','transports',
-    'hotels','users'));
+        return view('package.edit',compact('cities','guides','transports',
+    'hotels','users'))->with('package',$package);
     }
 
     /**

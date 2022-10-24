@@ -7,6 +7,10 @@ use App\Models\City;
 
 class CityController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+        $this->middleware('can:city.index');
+    }
     /**
      * Display a listing of the resource.
      *

@@ -16,7 +16,7 @@
   </head>
 
   <body>
-    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="{{ asset('images/ie8-panel/warning_bar_0000_us.jpg') }}" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+  <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="{{ asset('images/ie8-panel/warning_bar_0000_us.jpg') }}" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <div class="preloader">
       <div class="preloader-body">
         <div class="cssload-container">
@@ -40,29 +40,14 @@
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                   <!-- RD Navbar Brand-->
                   <div class="rd-navbar-brand">
-                    <!--Brand--><a class="brand" href="/"><img src="images/logo-default-450x37.png" alt="" width="225" height="18"/></a>
+                    <!--Brand--><a class="brand" href="/"><img src="images/logo.png" alt="" width="225" height="18"/></a>
                   </div>
                 </div>
                 <div class="rd-navbar-aside-right rd-navbar-collapse">
-                  <ul class="rd-navbar-corporate-contacts">
-                    <li>
-                      <div class="unit unit-spacing-xs">
-                        <div class="unit-left"><span class="icon fa fa-clock-o"></span></div>
-                        <div class="unit-body">
-                          <p>09:00<span>am</span> — 05:00<span>pm</span></p>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="unit unit-spacing-xs">
-                        <div class="unit-left"><span class="icon fa fa-phone"></span></div>
-                        <div class="unit-body"><a class="link-phone" href="tel:#">+1 323-913-4688</a></div>
-                      </div>
-                    </li>
-                  </ul>
-                  @if (Route::has('login'))
+                  
+                @if (Route::has('login'))
                     @auth
-                    <a class="button button-md button-default-outline-2 button-ujarak" href="{{ url('/dashboard') }}">Dashboard</a>
+                    <a class="button button-md button-default-outline-2 button-ujarak" href="{{ url('/dashboard') }}">Mi Cuenta</a>
                     @else
                     <a class="button button-md button-default-outline-2 button-ujarak" href="{{ route('login') }}">Iniciar Sesión</a>
                     @if (Route::has('register'))
@@ -113,17 +98,17 @@
             @csrf
 
             <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
+                <x-jet-label for="name" value="{{ __('Nombre') }}" />
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="last_name" value="{{ __('Last Name') }}" />
+                <x-jet-label for="last_name" value="{{ __('Apellido') }}" />
                 <x-jet-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required autofocus autocomplete="last_name" />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="phone" value="{{ __('Phone Number') }}" />
+                <x-jet-label for="phone" value="{{ __('Teléfono') }}" />
                 <x-jet-input id="phone" class="block mt-1 w-full" type="text" name="phone" :value="old('phone')" required autofocus autocomplete="phone" />
             </div>
 
@@ -133,12 +118,12 @@
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
+                <x-jet-label for="password" value="{{ __('Contraseña') }}" />
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+                <x-jet-label for="password_confirmation" value="{{ __('Confirmar Contraseña') }}" />
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
@@ -161,11 +146,11 @@
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+                    {{ __('¿Ya está Registrado?') }}
                 </a>
 
                 <x-jet-button class="ml-4">
-                    {{ __('Register') }}
+                    {{ __('Registarse') }}
                 </x-jet-button>
             </div>
         </form>
@@ -174,32 +159,32 @@
 
     
 
-      <!-- Page Footer-->
-      <footer class="section footer-corporate context-dark">
+<!-- Page Footer-->
+<footer class="section footer-corporate context-dark">
         <div class="footer-corporate-inset">
           <div class="container">
             <div class="row row-40 justify-content-lg-between">
               <div class="col-sm-6 col-md-12 col-lg-3 col-xl-4">
                 <div class="oh-desktop">
                   <div class="wow slideInRight" data-wow-delay="0s">
-                    <h6 class="text-spacing-100 text-uppercase">Contact us</h6>
+                    <h6 class="text-spacing-100 text-uppercase">Contactanos</h6>
                     <ul class="footer-contacts d-inline-block d-sm-block">
                       <li>
                         <div class="unit">
                           <div class="unit-left"><span class="icon fa fa-phone"></span></div>
-                          <div class="unit-body"><a class="link-phone" href="tel:#">+1 323-913-4688</a></div>
+                          <div class="unit-body"><a class="link-phone" href="tel:#">+593 999 229 286</a></div>
                         </div>
                       </li>
                       <li>
                         <div class="unit">
                           <div class="unit-left"><span class="icon fa fa-envelope"></span></div>
-                          <div class="unit-body"><a class="link-aemail" href="mailto:#">info@demolink.org</a></div>
+                          <div class="unit-body"><a class="link-aemail" href="mailto:#">viajandojuntos@gmail.com</a></div>
                         </div>
                       </li>
                       <li>
                         <div class="unit">
                           <div class="unit-left"><span class="icon fa fa-location-arrow"></span></div>
-                          <div class="unit-body"><a class="link-location" href="#">4730 Crystal Springs Dr, Los Angeles, CA 90027</a></div>
+                          <div class="unit-body"><a class="link-location" href="#">Av. 12 de Octubre 1076, Quito 170143</a></div>
                         </div>
                       </li>
                     </ul>
@@ -209,19 +194,19 @@
               <div class="col-sm-6 col-md-5 col-lg-3 col-xl-4">
                 <div class="oh-desktop">
                   <div class="wow slideInDown" data-wow-delay="0s">
-                    <h6 class="text-spacing-100 text-uppercase">Popular news</h6>
+                    <h6 class="text-spacing-100 text-uppercase">Noticias Populares</h6>
                     <!-- Post Minimal 2-->
                     <article class="post post-minimal-2">
-                      <p class="post-minimal-2-title"><a href="#">Your Personal Guide to 5 Best Places to Visit on Earth</a></p>
+                      <p class="post-minimal-2-title"><a href="#">Enlaces pedientes</a></p>
                       <div class="post-minimal-2-time">
-                        <time datetime="2019-05-04">May 04, 2019</time>
+                        <time datetime="2019-05-04">Oct 12, 2022</time>
                       </div>
                     </article>
                     <!-- Post Minimal 2-->
                     <article class="post post-minimal-2">
-                      <p class="post-minimal-2-title"><a href="#">Top 10 Hotels: Rating by Wonder Tour Travel Experts</a></p>
+                      <p class="post-minimal-2-title"><a href="#">Enlaces pedientes</a></p>
                       <div class="post-minimal-2-time">
-                        <time datetime="2019-05-04">May 04, 2019</time>
+                        <time datetime="2019-05-04">Oct 12, 2022</time>
                       </div>
                     </article>
                   </div>
@@ -230,15 +215,13 @@
               <div class="col-sm-11 col-md-7 col-lg-5 col-xl-4">
                 <div class="oh-desktop">
                   <div class="wow slideInLeft" data-wow-delay="0s">
-                    <h6 class="text-spacing-100 text-uppercase">Quick links</h6>
+                    <h6 class="text-spacing-100 text-uppercase">Enlaces</h6>
                     <ul class="row-6 list-0 list-marked list-marked-md list-marked-secondary list-custom-2">
-                      <li><a href="about">About us</a></li>
-                      <li><a href="#">Our Tours</a></li>
-                      <li><a href="#">Our Team</a></li>
-                      <li><a href="#">Gallery</a></li>
-                      <li><a href="#">Blog</a></li>
+                      <li><a href="/">Inicio</a></li>
+                      <li><a href="about">Sobre nosotros</a></li>
+                      <li><a href="#">enlace pendiente</a></li>
+                      <li><a href="contact">Contáctanos</a></li>
                     </ul>
-                    <div class="group-md group-middle justify-content-sm-start"><a class="button button-lg button-primary button-ujarak" href="#">Get in touch</a></div>
                   </div>
                 </div>
               </div>
@@ -249,21 +232,11 @@
           <div class="container">
             <div class="row justfy-content-xl-space-berween row-10 align-items-md-center2">
               <div class="col-sm-6 col-md-4 text-sm-right text-md-center">
-                <div>
-                  <ul class="list-inline list-inline-sm footer-social-list-2">
-                    <li><a class="icon fa fa-facebook" href="#"></a></li>
-                    <li><a class="icon fa fa-twitter" href="#"></a></li>
-                    <li><a class="icon fa fa-google-plus" href="#"></a></li>
-                    <li><a class="icon fa fa-instagram" href="#"></a></li>
-                  </ul>
-                </div>
+                
               </div>
               <div class="col-sm-6 col-md-4 order-sm-first">
                 <!-- Rights-->
-                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Wonder Tour</span>. All Rights Reserved. Design by <a href="https://www.templatemonster.com">TemplateMonster</a></p>
-              </div>
-              <div class="col-sm-6 col-md-4 text-md-right">
-                <p class="rights"><a href="#">Privacy Policy</a></p>
+                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Viajando Juntos</span>. Todos los derechos reservados. Diseñado por <a >DALTECH</a></p>
               </div>
             </div>
           </div>

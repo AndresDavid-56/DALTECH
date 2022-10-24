@@ -6,8 +6,14 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\City;
 
+use Spatie\Permission\Models\Role;
+
 class UserController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+        $this->middleware('can:user.index');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -73,7 +79,10 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $cities = City::all();
-        return view('user.edit', compact('cities'))->with('user',$user);
+
+        $roles = Role::all();
+
+        return view('user.edit', compact('cities','roles'))->with('user',$user);
     }
 
     /**
@@ -92,7 +101,8 @@ class UserController extends Controller
         $user->email = $request->get('email');
         $user->password = $request->get('password');
 
-        $user->save();
+        $roles = $request->input('roles',[]);
+        $user->syncRoles($roles);
 
         return redirect('/users');
     }
@@ -110,4 +120,5 @@ class UserController extends Controller
 
         return redirect('/users');
     }
+    
 }

@@ -9,6 +9,10 @@ use App\Models\City;
 
 class HotelController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+        $this->middleware('can:hotel.index');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,8 +21,8 @@ class HotelController extends Controller
     public function index()
     {
         $hotels = Hotel::all();
-
         $cities = City::all();
+        
         return view('hotel.index',compact('cities'))->with('hotels',$hotels);
     }
 
