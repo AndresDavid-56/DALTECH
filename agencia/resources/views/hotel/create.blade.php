@@ -43,7 +43,12 @@
   <div class="mb-3 row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Tipo de Cuarto</label>
     <div class="col-sm-10">
-    <input name="room_types" id="room_types" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <select id="room_types" name="room_types" class="form-select" aria-label="Default select example">
+       <option value=""> -- Seleccione el Tipo de Cuarto -- </option> 
+         <option value="VIP">VIP</option>
+         <option value="Simple">Simple</option>
+         <option value="Doble">Doble</option>
+       </select>
     </div>
   </div>
 

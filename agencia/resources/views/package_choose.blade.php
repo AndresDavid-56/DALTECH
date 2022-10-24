@@ -20,7 +20,7 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="booking-cta">
-							<h1>Selecciona tu Paquete de Viaje</h1>
+							<h1>Arma tu Paquete de Viaje</h1>
 						</div>
 					</div>
 					<div class="col-md-7 col-md-offset-1">
@@ -64,13 +64,13 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<span class="form-label">Fecha Inicio</span>
-											<input class="form-control" name="start_date" id="datetimepicker" type="date" required>
+											<input class="form-control" id="fromDate"  name="start_date" id="datetimepicker" type="date" required min="<?php $fecha = date('Y-m-d');echo $fecha;?>">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
 											<span class="form-label">Fecha Salida</span>
-											<input class="form-control" name="exit_date" id="datetimepicker"  type="date" required>
+											<input class="form-control" id="toDate" name="exit_date" id="datetimepicker"  type="date" required min="<?php $fecha = date('Y-m-d'); echo $fecha;?>">
 										</div>
 									</div>
 								</div>
@@ -168,12 +168,49 @@
 	</div>
 </body>
 
-<script type="text/javascript">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script type="text/javascript">
            $(function () {
                $('#datetimepicker').datetimepicker({
                    format: "YYYY/MM/DD HH:MM:SS"
                });  
            });
+       </script>
+        <script type="text/javascript">
+           var fromDate;
+           $('#fromDate').on('change',function(){
+            fromDate = $(this).val();
+            $('#toDate').prop('min',function(){
+              return fromDate;
+            })
+           })
+           var toDate;
+           $('#toDate').on('change',function(){
+            toDate = $(this).val();
+            $('#fromDate').prop('max',function(){
+              return toDate;
+            })
+           })
+       </script>
+<script>
+
+var origen = document.getElementById("from");
+var destino = document.getElementById("to");
+
+destino.addEventListener("change", function(){
+	if(origen.value == destino.value){
+	  destino.value=null;
+	  alert("Ciudad de Origen igual a la de Destino !");
+	}
+});
+
+origen.addEventListener("change", function(){
+	if(origen.value == destino.value){
+	  origen.value=null;
+	  alert("Ciudad de Origen igual a la de Destino !");
+	}
+});
 </script>
 
 </html>

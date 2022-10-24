@@ -21,8 +21,8 @@ class HotelController extends Controller
     public function index()
     {
         $hotels = Hotel::all();
-
         $cities = City::all();
+        
         return view('hotel.index',compact('cities'))->with('hotels',$hotels);
     }
 

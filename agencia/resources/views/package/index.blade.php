@@ -1,13 +1,14 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Paquetes')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Paquetes</h1>
 @stop
 
 @section('content')
-<h1>Vista Index de Paquete</h1>
+
+
     @can('package.create')
     <a href="packages/create" class="btn btn-primary">Agregar Paquete</a>
     @endcan
@@ -19,15 +20,16 @@
         <th scope='col'>Fecha Inicio</th>
         <th scope='col'>Fecha Fin</th>
         <th scope='col'>SubTotal</th>
-        <th scope='col'>Número Adultos</th>
-        <th scope='col'>Número Niños</th>
-        <th scope='col'>Número Tercera Edad</th>
+        <th scope='col'>Adultos</th>
+        <th scope='col'>Niños</th>
+        <th scope='col'>Tercera Edad</th>
         <th scope='col'>Ciudad Origen</th>
         <th scope='col'>Ciudad Destino</th>
-        <th scope='col'>Transporte ID</th>
-        <th scope='col'>Guía ID</th>
-        <th scope='col'>Hotel ID</th>
-        <th scope='col'>Usuario ID</th>
+        <th scope='col'>Transporte</th>
+        <th scope='col'>Guía</th>
+        <th scope='col'>Hotel</th>
+        <th scope='col'>Usuario</th>
+        <th scope='col'>ID</th>
         @can('package.create')
         <th scope='col'>Acciones</th>
         @endcan
@@ -44,11 +46,12 @@
         <td> {{$package->adults_number}} </td>
         <td> {{$package->children_number}} </td>
         <td> {{$package->elderly_number}} </td>
-        <td> {{$package->from}} </td>
-        <td> {{$package->to}} </td>
-        <td> {{$package->transports_id}} </td>
-        <td> {{$package->guides_id}} </td>
-        <td> {{$package->hotels_id}} </td>            
+        <td> {{$package->city->city_name}} </td>
+        <td> {{$package->city2->city_name}} </td>
+        <td> {{$package->transport->description_transport}} </td>
+        <td> {{$package->guide->guide_name}} </td>
+        <td> {{$package->hotel->hotel_name}} </td>            
+        <td> {{$package->user->email}} </td>
         <td> {{$package->user_id}} </td>
         
         @can('package.create')
@@ -66,6 +69,7 @@
     @endforeach
 </tbody>
 </table>
+
 @stop
 
 @section('css')
@@ -74,10 +78,60 @@
 @stop
 
 @section('js')
-<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-<script>
-    $(document).ready( function () {
-    $('#packages').DataTable();
+
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/plug-ins/1.12.1/i18n/es-ES.json"></script>
+    <script>
+
+        $(document).ready( function () {
+            console.log({{auth()->id()}});
+            $('#packages').DataTable({
+        responsive: true,
+        autoWidth: false,
+        "language": {
+            "lengthMenu": "Mostar _MENU_ registros por página",
+            "zeroRecords": "Sin Registros",
+            "info": "Mostrando página _PAGE_ de _PAGES_",
+            "infoEmpty": "No hay registro Disponible",
+            "infoFiltered": "(filtrado de _MAX_ registros totales)",
+            "search": "Buscar: ",
+            "paginate": {
+                "next": "Siguiente",
+                "previous": "Anterior"
+            }
+        }
+        
+    });
 } );
-</script>
+
+
+        @can('user')
+        $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
+            var min = {{auth()->id()}} ;
+            var max = {{auth()->id()}} ;
+            var age = parseFloat(data[13]) || 0; // use data for the age column
+            if (
+                (isNaN(min) && isNaN(max)) ||
+                (isNaN(min) && age <= max) ||
+                (min <= age && isNaN(max)) ||
+                (min <= age && age <= max)
+            ) {
+                return true;
+            }
+            return false;
+        });
+
+        $({{auth()->id()}}, {{auth()->id()}}).keyup(function () {
+        table.draw();
+        });
+        @endcan
+      
+    </script>
+
+    @can('package.create')
+    <script>
+
+    </script>
+    @endcan
+
 @stop

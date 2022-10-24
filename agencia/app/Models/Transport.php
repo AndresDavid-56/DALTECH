@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Transport extends Model
 {
     use HasFactory;
+    public function city(){
+        return $this->belongsTo(City::class, 'city_id');
+    }
 }

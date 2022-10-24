@@ -52,7 +52,23 @@
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready( function () {
-    $('#users').DataTable();
+    $('#users').DataTable({
+        responsive: true,
+        autoWidth: false,
+        "language": {
+            "lengthMenu": "Mostar _MENU_ registros por página",
+            "zeroRecords": "Sin Registros",
+            "info": "Mostrando página _PAGE_ de _PAGES_",
+            "infoEmpty": "No hay registro Disponible",
+            "infoFiltered": "(filtrado de _MAX_ registros totales)",
+            "search": "Buscar: ",
+            "paginate": {
+                "next": "Siguiente",
+                "previous": "Anterior"
+            }
+        }
+        
+    });
 } );
 </script>
 @stop

@@ -11,9 +11,10 @@ use App\Models\Guide;
 use App\Models\User;
 use App\Models\Transport;
 
-
 class PackageController extends Controller
 {
+
+
     public function __construct(){
         $this->middleware('auth');
         $this->middleware('can:package.index')->only('index');
@@ -27,7 +28,6 @@ class PackageController extends Controller
     public function index()
     {
         $packages = Package::all();
-
         $cities = City::all();
         return view('package.index',compact('cities'))->with('packages',$packages);
     }

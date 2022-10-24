@@ -3,11 +3,10 @@
 @section('title', 'Transporte')
 
 @section('content_header')
-    <h1>Transporte</h1>
+    <h1>Transportes</h1>
 @stop
 
 @section('content')
-<h1>Vista Index de Transporte</h1>
 
 <a href="transports/create" class="btn btn-primary">Agregar Transporte</a>
 <br></br>
@@ -40,7 +39,7 @@
         <td> {{$transport->transport_email}} </td>
         <td> {{$transport->transport_phone}} </td>
         
-        <td> {{$transport->city_id}} </td>
+        <td> {{$transport->city->city_name}}</td>
 
         <td> 
             <form action="{{ route('transports.destroy', $transport->id)}} " method="POST">
@@ -65,7 +64,23 @@
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready( function () {
-    $('#transports').DataTable();
+    $('#transports').DataTable({
+        responsive: true,
+        autoWidth: false,
+        "language": {
+            "lengthMenu": "Mostar _MENU_ registros por página",
+            "zeroRecords": "Sin Registros",
+            "info": "Mostrando página _PAGE_ de _PAGES_",
+            "infoEmpty": "No hay registro Disponible",
+            "infoFiltered": "(filtrado de _MAX_ registros totales)",
+            "search": "Buscar: ",
+            "paginate": {
+                "next": "Siguiente",
+                "previous": "Anterior"
+            }
+        }
+        
+    });
 } );
 </script>
 @stop

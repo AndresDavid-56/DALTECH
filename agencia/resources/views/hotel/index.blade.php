@@ -34,8 +34,12 @@
         <td> {{$hotel->hotel_email}} </td>
         <td> {{$hotel->hotel_phone}} </td>
         <td> {{$hotel->room_types}} </td>
-        
-        <td> {{$hotel->city_id}} </td>
+    
+        <td> 
+
+        {{$hotel->city->city_name}}
+
+        </td>
 
         <td> 
             <form action="{{ route('hotels.destroy', $hotel->id)}} " method="POST">
@@ -60,7 +64,23 @@
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready( function () {
-    $('#hotels').DataTable();
+    $('#hotels').DataTable({
+        responsive: true,
+        autoWidth: false,
+        "language": {
+            "lengthMenu": "Mostar _MENU_ registros por página",
+            "zeroRecords": "Sin Registros",
+            "info": "Mostrando página _PAGE_ de _PAGES_",
+            "infoEmpty": "No hay registro Disponible",
+            "infoFiltered": "(filtrado de _MAX_ registros totales)",
+            "search": "Buscar: ",
+            "paginate": {
+                "next": "Siguiente",
+                "previous": "Anterior"
+            }
+        }
+        
+    });
 } );
 </script>
 @stop

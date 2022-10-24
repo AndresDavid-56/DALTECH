@@ -184,8 +184,10 @@
 .booking-cta h1 {
 	font-size: 52px;
 	text-transform: uppercase;
-	color: #4fa3e3;
+	color: white;
+	font-weight: bolder;	
 	font-weight: 400;
+	font-weight: bold;
 }
 
 .booking-cta p {

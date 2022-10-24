@@ -7,31 +7,47 @@
 @stop
 
 @section('content')
-<form action="/packages" method="POST">
-   @csrf
+<?php
+$globarl = 100;
+$global = 110;
+?>
+<form action="/packages" method="POST" autocomplete="on">
+@csrf
+<script>
+  $global = 0;
+  console.log("El precio está en "+ $global)
+</script>
    <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Fecha Inicio</label>
+    <label for="inputPassword" class="col-sm-2 col-form-label">Fecha Inicio JQ</label>
     <div class="col-sm-10">
-    
-    <input type="date" id="datetimepicker" name="start_date"
+    <input class="" type="date" id="fromDate" name="start_date"
        value=""
-       min="2022-10-01">
+       min="<?php $fecha = date('Y-m-d');
+       echo $fecha;?>">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Fecha Fin JQ</label>
+    <div class="col-sm-10">
+    <input class="" type="date" id="toDate" name="exit_date"
+       value=""
+       min="<?php $fecha = date('Y-m-d');
+       echo $fecha;?>">
     </div>
   </div>
 
   <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Fecha Salida</label>
-    <div class="col-sm-10">
-    <input type="date" id="datetimepicker" name="exit_date"
-       value=""
-       min="2022-10-01">
-    </div>
-  </div> 
-
-  <div class="mb-3 row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Subtotal</label>
     <div class="col-sm-10">
-    <input name="subtotal" id="subtotal" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <input disabled value="El Campo se generará automaticamente" alpha type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <script>
+     function total() {
+            $global = $global * 2 + $global * 1.2 + $global * 1.1;
+            console.log($global);
+          }
+    </script> 
+    <input type='hidden' id='subtotal' name='subtotal' 
+     value="<?php echo $globarl = $global; ?>"/>
     </div>
   </div>
   <div class="mb-3 row">
@@ -74,13 +90,24 @@
        </select>
     </div>
   </div>
+
+
   <div class="mb-3 row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Guía</label>
     <div class="col-sm-10">
-    <select id="guides_id" name="guides_id" class="form-select" aria-label="Default select example">
+    <select onchange="myFunction()" id="guides_id" name="guides_id" class="form-select" aria-label="Default select example">
        <option value=""> -- Seleccione el guía -- </option>  
        @foreach ($guides as $guide)  
-         <option value="{{ $guide['id'] }}">{{$guide['guide_name']}}</option>
+         <option  value="{{ $guide['id'] }}">{{$guide['guide_name']}}</option>
+
+      <script>
+          function myFunction() {
+            console.log({{$guide['price_per_day']}});
+            $globarl = $global + {{$guide['price_per_day']}}
+            $global = $global + {{$guide['price_per_day']}}
+            console.log($global);
+          }
+      </script>
        @endforeach
        </select>
     </div>
@@ -88,10 +115,18 @@
   <div class="mb-3 row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Transporte</label>
     <div class="col-sm-10">
-    <select id="transports_id" name="transports_id" class="form-select" aria-label="Default select example">
+    <select onchange="myFunction2()" id="transports_id" name="transports_id" class="form-select" aria-label="Default select example">
        <option value=""> -- Seleccione el Transporte -- </option>  
        @foreach ($transports as $transport)  
          <option value="{{ $transport['id'] }}">{{$transport['description_transport']}}</option>
+         <script>
+          function myFunction2() {
+            console.log({{$transport['price_one_way']}});
+            $globarl =  $global + {{$transport['price_one_way']}}
+            $global = $global + {{$transport['price_one_way']}}
+            console.log($global);
+          }
+      </script>
        @endforeach
        </select>
     </div>
@@ -99,10 +134,18 @@
   <div class="mb-3 row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Hotel</label>
     <div class="col-sm-10">
-    <select id="hotels_id" name="hotels_id" class="form-select" aria-label="Default select example">
+    <select onchange="myFunction3()"  id="hotels_id" name="hotels_id" class="form-select" aria-label="Default select example">
        <option value=""> -- Seleccione el Hotel -- </option>  
        @foreach ($hotels as $hotel)  
          <option value="{{ $hotel['id'] }}">{{$hotel['hotel_name']}}</option>
+         <script>
+          function myFunction3() {
+            console.log({{$hotel['price_per_night']}});
+            $globarl = $global + {{$hotel['price_per_night']}}
+            $global = $global + {{$hotel['price_per_night']}}
+            console.log($global);
+          }
+      </script>
        @endforeach
        </select>
     </div>
@@ -114,34 +157,69 @@
        <option value=""> -- Seleccione el Usuario -- </option>  
        @foreach ($users as $user)  
          <option value="{{ $user['id'] }}">{{$user['email']}}</option>
+         
        @endforeach
        </select>
     </div>
   </div>
 
    <a href="/packages" class="btn btn-secondary" tabindex="5">Cancelar</a>
-   <button type="submit" class="btn btn-primary">Guardar</button>
+   <button onchange="total()" type="submit" class="btn btn-primary">Guardar</button>
 </form>
 @stop
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
+
 @stop
 
 @section('js')
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
         <script type="text/javascript">
+        
            $(function () {
                $('#datetimepicker').datetimepicker({
                    format: "YYYY/MM/DD HH:MM:SS"
                });  
            });
        </script>
+        <script type="text/javascript">
+           var fromDate;
+           $('#fromDate').on('change',function(){
+            fromDate = $(this).val();
+            $('#toDate').prop('min',function(){
+              return fromDate;
+            })
+           })
+           var toDate;
+           $('#toDate').on('change',function(){
+            toDate = $(this).val();
+            $('#fromDate').prop('max',function(){
+              return toDate;
+            })
+           })
+       </script>
 
-    <script>
-        date = new Date();
-        year = date.getFullYear();
-        month = date.getMonth() + 1;
-        day = date.getDate();
-        $current_date = day + "-" + month + "-" + year;
-    </script>
+  <script>
+
+    var origen = document.getElementById("from");
+    var destino = document.getElementById("to");
+
+    destino.addEventListener("change", function(){
+        if(origen.value == destino.value){
+          destino.value=null;
+          alert("Ciudad de Origen igual a la de Destino !");
+        }
+    });
+
+    origen.addEventListener("change", function(){
+        if(origen.value == destino.value){
+          origen.value=null;
+          alert("Ciudad de Origen igual a la de Destino !");
+        }
+    });
+  </script>
+
 @stop

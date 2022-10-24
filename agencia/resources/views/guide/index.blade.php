@@ -34,7 +34,7 @@
         <td> {{$guide->guide_phone}} </td>
         <td> {{$guide->guide_email}} </td>
         
-        <td> {{$guide->city_id}} </td>
+        <td> {{$guide->city->city_name}} </td>
 
         <td> 
             <form action="{{ route('guides.destroy', $guide->id)}} " method="POST">
@@ -59,7 +59,23 @@
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready( function () {
-    $('#guides').DataTable();
+    $('#guides').DataTable({
+        responsive: true,
+        autoWidth: false,
+        "language": {
+            "lengthMenu": "Mostar _MENU_ registros por página",
+            "zeroRecords": "Sin Registros",
+            "info": "Mostrando página _PAGE_ de _PAGES_",
+            "infoEmpty": "No hay registro Disponible",
+            "infoFiltered": "(filtrado de _MAX_ registros totales)",
+            "search": "Buscar: ",
+            "paginate": {
+                "next": "Siguiente",
+                "previous": "Anterior"
+            }
+        }
+        
+    });
 } );
 </script>
 @stop

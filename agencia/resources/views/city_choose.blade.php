@@ -123,21 +123,21 @@
                 </div>
                 <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
                   <ul class="list-marked-2 box-categories-list">
-                    <li><a href="package_choose?ciudad=Esmeraldas"><img src="images/quito.png" alt="" width="368" height="420"/></a>
+                    <li><a href="package_choose?ciudad=Esmeraldas"><img src="images/esmeraldas.png" alt="" width="368" height="420"/></a>
                       <h5 class="box-categories-title">Esmeraldas</h5>
                     </li>
                   </ul>
                 </div>
                 <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
                   <ul class="list-marked-2 box-categories-list">
-                    <li><a href="package_choose?ciudad=Ambato"><img src="images/guayaquil.png" alt="" width="368" height="420"/></a>
+                    <li><a href="package_choose?ciudad=Ambato"><img src="images/ambato.png" alt="" width="368" height="420"/></a>
                       <h5 class="box-categories-title">Ambato</h5>
                     </li>
                   </ul>
                 </div>
                 <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
                   <ul class="list-marked-2 box-categories-list">
-                    <li><a href="package_choose?ciudad=Macas"><img src="images/cuenca.png" alt="" width="368" height="420"/></a>
+                    <li><a href="package_choose?ciudad=Macas"><img src="images/macas.png" alt="" width="368" height="420"/></a>
                       <h5 class="box-categories-title">Macas</h5>
                     </li>
                   </ul>
@@ -145,21 +145,21 @@
                 </div>
                 <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
                   <ul class="list-marked-2 box-categories-list">
-                    <li><a href="package_choose?ciudad=Riobamba"><img src="images/quito.png" alt="" width="368" height="420"/></a>
+                    <li><a href="package_choose?ciudad=Riobamba"><img src="images/riobamba.png" alt="" width="368" height="420"/></a>
                       <h5 class="box-categories-title">Riobamba</h5>
                     </li>
                   </ul>
                 </div>
                 <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
                   <ul class="list-marked-2 box-categories-list">
-                    <li><a href="package_choose?ciudad=Ibarra"><img src="images/guayaquil.png" alt="" width="368" height="420"/></a>
+                    <li><a href="package_choose?ciudad=Ibarra"><img src="images/ibarra.png" alt="" width="368" height="420"/></a>
                       <h5 class="box-categories-title">Ibarra</h5>
                     </li>
                   </ul>
                 </div>
                 <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
                   <ul class="list-marked-2 box-categories-list">
-                    <li><a href="package_choose?ciudad=Napo"><img src="images/cuenca.png" alt="" width="368" height="420"/></a>
+                    <li><a href="package_choose?ciudad=Napo"><img src="images/napo.png" alt="" width="368" height="420"/></a>
                       <h5 class="box-categories-title">Napo</h5>
                     </li>
                   </ul>

@@ -3,11 +3,10 @@
 @section('title', 'Guía')
 
 @section('content_header')
-    <h1>Guía</h1>
+    <h1>Crear Guía </h1>
 @stop
 
 @section('content')
-<h2> Crear Guía </h2>
 
 <form action="/guides" method="POST">
    @csrf
