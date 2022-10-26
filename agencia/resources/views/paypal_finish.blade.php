@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
-    <title>Ciudades</title>
+    <title>Pago</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/fonts.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
   </head>
 
-  <body>
-    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="{{ asset('images/ie8-panel/warning_bar_0000_us.jpg') }}" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+  <body >
+  <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="{{ asset('images/ie8-panel/warning_bar_0000_us.jpg') }}" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <div class="preloader">
       <div class="preloader-body">
         <div class="cssload-container">
@@ -47,7 +48,6 @@
                   
                 @if (Route::has('login'))
                     @auth
-                    <p class="h4">Bienvenido,  {{ Auth::user()->name }}  </p>
                     <a class="button button-md button-default-outline-2 button-ujarak" href="{{ url('/dashboard') }}">Mi Cuenta</a>
                     @else
                     <a class="button button-md button-default-outline-2 button-ujarak" href="{{ route('login') }}">Iniciar Sesión</a>
@@ -85,95 +85,54 @@
           </nav>
         </div>
       </header>
-<!-- Encabezado fin -->
-      <!-- Page Content -->
-    <!-- Swiper-->
+
+<br>
+<br>
+      <div class="card container">
+     
+   <div class="card-header"><p class="h5">Proceso Finalizado.</p>
     
-      <!-- Section Box Categories-->
-      <!-- Hot tours-->
-      <section class="section section-sm bg-default">
-        <div class="container">
-          <h3 class="oh-desktop"><span class="d-inline-block wow slideInDown">Seleccione su Destino</span></h3>
-          <div class="row row-sm row-40 row-md-50">
-            <div class="col-sm-6 col-md-12 wow fadeInRight">
-            <div class="container">
-          <div class="box-categories cta-box-wrap">
-            <div class="box-categories-content">
-              <div class="row justify-content-center">
-                <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
-                  <ul class="list-marked-2 box-categories-list">
-                    <li><a href="package_choose?ciudad=Quito"><img src="images/quito.png" alt="" width="368" height="420"/></a>
-                      <h5 class="box-categories-title">Quito</h5>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
-                  <ul class="list-marked-2 box-categories-list">
-                    <li><a href="package_choose?ciudad=Guayaquil"><img src="images/guayaquil.png" alt="" width="368" height="420"/></a>
-                      <h5 class="box-categories-title">Guayaquil</h5>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
-                  <ul class="list-marked-2 box-categories-list">
-                    <li><a href="package_choose?ciudad=Cuenca"><img src="images/cuenca.png" alt="" width="368" height="420"/></a>
-                      <h5 class="box-categories-title">Cuenca</h5>
-                    </li>
-                  </ul>
-                  <br/>
-                </div>
-                <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
-                  <ul class="list-marked-2 box-categories-list">
-                    <li><a href="package_choose?ciudad=Esmeraldas"><img src="images/esmeraldas.png" alt="" width="368" height="420"/></a>
-                      <h5 class="box-categories-title">Esmeraldas</h5>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
-                  <ul class="list-marked-2 box-categories-list">
-                    <li><a href="package_choose?ciudad=Ambato"><img src="images/ambato.png" alt="" width="368" height="420"/></a>
-                      <h5 class="box-categories-title">Ambato</h5>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
-                  <ul class="list-marked-2 box-categories-list">
-                    <li><a href="package_choose?ciudad=Macas"><img src="images/macas.png" alt="" width="368" height="420"/></a>
-                      <h5 class="box-categories-title">Macas</h5>
-                    </li>
-                  </ul>
-                  <br/>
-                </div>
-                <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
-                  <ul class="list-marked-2 box-categories-list">
-                    <li><a href="package_choose?ciudad=Riobamba"><img src="images/riobamba.png" alt="" width="368" height="420"/></a>
-                      <h5 class="box-categories-title">Riobamba</h5>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
-                  <ul class="list-marked-2 box-categories-list">
-                    <li><a href="package_choose?ciudad=Ibarra"><img src="images/ibarra.png" alt="" width="368" height="420"/></a>
-                      <h5 class="box-categories-title">Ibarra</h5>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
-                  <ul class="list-marked-2 box-categories-list">
-                    <li><a href="package_choose?ciudad=Napo"><img src="images/napo.png" alt="" width="368" height="420"/></a>
-                      <h5 class="box-categories-title">Napo</h5>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Owl Carousel-->
-        </div>
-            </div>
-          </div>
-        </div>
-      </section>      
+    </div>
+  <div class="card-body">
+    <h5 class="card-title"><p class="h5">{{ Auth::user()->name }}, tú proceso ha concluido.</p></h5>
+
+
+    @if(\Session::has('error'))
+        <div class="alert alert-danger" >{{ \Session::get('error') }}</div>
+        <script>
+                Swal.fire({
+            title: "Pago Cancelado",
+            confirmButtonText: "Volver al Inicio",
+        });
+            </script>
+
+        {{ \Session::forget('error') }}
+    @endif
+
+    
+    @if(\Session::has('success'))
+    <div class="alert alert-success" >{{ \Session::get('success') }}</div>
+    <script>
+                Swal.fire({
+            title: "Pago Realizado",
+            confirmButtonText: "Volver al Inicio",
+        });
+            </script>
+        
+        {{ \Session::forget('success') }}
+    @endif
+
+    <a class="btn btn-primary" href="/">Volver al Inicio</a>
+  </div>
+</div>
+
+
+
+
+	
+
+    <br>
+<br>
       <!-- Page Footer-->
       <footer class="section footer-corporate context-dark">
         <div class="footer-corporate-inset">
@@ -263,5 +222,16 @@
     <!-- Javascript-->
     <script src="{{ asset('/js/core.min.js') }}"></script>
     <script src="{{ asset('/js/script.js') }}"></script>
+    <script>
+
+function fireSweetAlert() {
+    Swal.fire(
+        'Good job!',
+        'You clicked the button!',
+        'success'
+    )
+}
+
+</script>
   </body>
 </html>

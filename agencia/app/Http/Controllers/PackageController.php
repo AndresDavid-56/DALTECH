@@ -10,6 +10,7 @@ use App\Models\City;
 use App\Models\Guide;
 use App\Models\User;
 use App\Models\Transport;
+use Carbon\Carbon;
 
 class PackageController extends Controller
 {
@@ -44,6 +45,25 @@ class PackageController extends Controller
 
         return view('/package_choose',compact('cities','guides','transports',
     'hotels','users'))->with('packages',$packages);
+    }
+
+    public function charts()
+    {
+        $packages = Package::all();
+
+        $cities = City::all();
+        $users = User::all();
+        $transports = Transport::all();
+        $guides = Guide::all();
+        $hotels = Hotel::all();
+
+        $conteo = "SELECT MonthName(created_at) as Month, count(*) as numRecords from packages";
+
+        //Meses
+        $Enero = Package::whereYear('created_at', Carbon::now()->year)->whereMonth('created_at', Carbon::now()->month)->count();
+
+        return view('/dashboard',compact('cities','guides','transports',
+    'hotels','users','Enero'))->with('packages',$packages, 'Enero', $Enero);
     }
 
     /**
@@ -86,7 +106,7 @@ class PackageController extends Controller
 
         $packages->save();
 
-        return redirect('/packages');
+        return redirect('/createpaypal');
     }
 
     /**

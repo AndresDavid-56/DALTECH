@@ -10,6 +10,18 @@
 
 	<link type="text/css" rel="stylesheet" href="{{ '/css2/bootstrap.min.css' }}" />
 	<link type="text/css" rel="stylesheet" href="{{ '/css2/style.css' }}" />
+	<script>
+<?php
+						$con = new mysqli('localhost','root','','agencia03');
+						$query = $con->query("
+						SELECT cities.id from cities WHERE cities.city_name = '{$_GET['ciudad']}' ");
+						foreach($query as $data){
+							$month[] = $data['id'];
+						  }
+?>
+console.log();
+
+						</script>
 
 </head>
 
@@ -25,8 +37,27 @@
 					</div>
 					<div class="col-md-7 col-md-offset-1">
 						<div class="booking-form">
-							<!-- <form action="/packages" method="POST"> -->
-							<!-- @csrf -->
+							 <form action="/packages" method="POST">
+							 @csrf
+															<?php
+								$globarl = 100;
+								$global = rand(100, 500);
+								?>
+															<script>
+									function total() {
+											$global = $global * 2 + $global * 1.2 + $global * 1.1;
+											console.log($global);
+											console.log({{ Auth::user()->id }});
+										}
+									</script> 
+
+							 <input type='hidden' id='subtotal' name='subtotal' 
+     						value="<?php echo $global; ?>"/>
+
+							 <input type='hidden' id='user_id' name='user_id' 
+     						value=" {{ Auth::user()->id }}"/>
+
+
 								<div class="form-group">
 									<div class="form-checkbox">
 										<label for="roundtrip">
@@ -56,7 +87,9 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<span class="form-label">Ciudad Destino</span>
-											<input class="form-control" id="to" name="to" disabled=»disabled» type="text" value="{{ $v1 = $_GET['ciudad'] }}" placeholder="Ciudad"></input>
+											<input class="form-control" id="" name="" disabled=»disabled» type="text" value="{{ $v1 = $_GET['ciudad'] }}" placeholder="Ciudad"></input>
+											<input type='hidden' id='to' name='to' value="<?php  echo $month[0] ?>"/>
+
 										</div>
 									</div>
 								</div>
@@ -122,9 +155,9 @@
 									<div class="col-md-4">
 										<div class="form-group">
 											<span class="form-label">Transporte</span>
-											<select name="transport" id="transport" class="form-control">
+											<select name="transports_id" id="transport_id" class="form-control">
 											@foreach ($transports as $transport)
-									         <option value="{{ $transport['id'] }}">{{$transport['transport_type']}}</option>
+									         <option value="{{ $transport['id'] }}">{{$transport['description_transport']}}</option>
        										@endforeach
 											</select>
 											<span class="select-arrow"></span>
@@ -133,7 +166,7 @@
 									<div class="col-md-4">
 										<div class="form-group">
 											<span class="form-label">Hotel</span>
-											<select name="hotel" id="hotel" class="form-control">
+											<select name="hotels_id" id="hotels_id" class="form-control">
 											@foreach ($hotels as $hotel)
 									         <option value="{{ $hotel['id'] }}">{{$hotel['hotel_name']}}</option>
        										@endforeach
@@ -144,10 +177,10 @@
 									<div class="col-md-4">
 										<div class="form-group">
 											<span class="form-label">¿ Desea Guía ?</span>
-											<select name="transport" id="transport" class="form-control">
+											<select name="guides_id" id="guides_id" class="form-control">
 											
-											<option>Sí</option>
-											<option>No</option>
+											<option value="4">Sí</option>
+											<option value="2">No</option>
        										
 											</select>
 											<span class="select-arrow"></span>
@@ -157,7 +190,7 @@
 								</div>
 								<div value="col-md-4">
 								
-									<button href="city_choose" class="submit-btn">Continuar</button>
+									<button href="" class="submit-btn">Continuar</button>
 								</div>
 							</form>
 						</div>
@@ -197,13 +230,9 @@
 
 var origen = document.getElementById("from");
 var destino = document.getElementById("to");
-
-destino.addEventListener("change", function(){
-	if(origen.value == destino.value){
-	  destino.value=null;
-	  alert("Ciudad de Origen igual a la de Destino !");
-	}
-});
+    
+console.log(destino.value);
+console.log(origen.value);
 
 origen.addEventListener("change", function(){
 	if(origen.value == destino.value){
@@ -212,5 +241,7 @@ origen.addEventListener("change", function(){
 	}
 });
 </script>
+
+
 
 </html>

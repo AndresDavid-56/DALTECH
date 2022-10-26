@@ -18,7 +18,7 @@ $global = 110;
   console.log("El precio está en "+ $global)
 </script>
    <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Fecha Inicio JQ</label>
+    <label for="inputPassword" class="col-sm-2 col-form-label">Fecha de Inicio</label>
     <div class="col-sm-10">
     <input class="" type="date" id="fromDate" name="start_date"
        value=""
@@ -27,7 +27,7 @@ $global = 110;
     </div>
   </div>
   <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Fecha Fin JQ</label>
+    <label for="inputPassword" class="col-sm-2 col-form-label">Fecha de Regreso</label>
     <div class="col-sm-10">
     <input class="" type="date" id="toDate" name="exit_date"
        value=""
