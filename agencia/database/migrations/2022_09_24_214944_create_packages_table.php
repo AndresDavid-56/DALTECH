@@ -39,6 +39,8 @@ return new class extends Migration
             $table->foreign('hotels_id')->references('id')->on('hotels');
 
             $table->foreign('user_id')->references('id')->on('users');
+
+            $table->string('status');
         });
     }
 

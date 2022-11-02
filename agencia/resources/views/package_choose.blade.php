@@ -35,22 +35,26 @@ console.log();
 							<h1>Arma tu Paquete de Viaje</h1>
 						</div>
 					</div>
-					<div class="col-md-7 col-md-offset-1">
-						<div class="booking-form">
-							 <form action="/packages" method="POST">
-							 @csrf
-															<?php
+					<?php
 								$globarl = 100;
 								$global = rand(100, 500);
 								?>
-															<script>
+								<script>
+  $global = 0;
+  console.log("El precio está en "+ $global)
+</script>
+<script>
 									function total() {
-											$global = $global * 2 + $global * 1.2 + $global * 1.1;
+											
+										$global = $global * 2 + $global * 1.2 + $global * 1.1;
 											console.log($global);
 											console.log({{ Auth::user()->id }});
 										}
 									</script> 
-
+					<div class="col-md-7 col-md-offset-1">
+						<div class="booking-form">
+							 <form action="/packages" method="POST">
+							 @csrf
 							 <input type='hidden' id='subtotal' name='subtotal' 
      						value="<?php echo $global; ?>"/>
 
@@ -161,6 +165,7 @@ console.log();
 											<span class="select-arrow"></span>
 										</div>
 									</div>
+									<input type='hidden' id='status' name='status' value="Pendiente"/>
 									<div class="col-md-4">
 										<div class="form-group">
 											<span class="form-label">Hotel</span>
@@ -244,7 +249,9 @@ origen.addEventListener("change", function(){
  $(document).ready(function () {
 		  //Transporte
 		  $('#to').ready(function () {
-			  var idCity = this.value;
+			  var idCity = <?php  echo $month[0] ?>;
+			  console.log('sa> '  + idCity);
+			  console.log(<?php  echo $month[0] ?>);
 			  $("#transports_id").html('');
 			  $.ajax({
 				  url: "{{url('api/fetch-transport')}}",
@@ -259,6 +266,7 @@ origen.addEventListener("change", function(){
 					  $.each(result.transports, function (key, value) {
 						  $("#transports_id").append('<option value="' + value
 							  .id + '">' + value.description_transport + '</option>');
+							  $global = $global + 80;
 					  });
 				  }
 			  });
@@ -266,7 +274,7 @@ origen.addEventListener("change", function(){
 
 		  //Hotel
 		  $('#to').ready(function () {
-			  var idCity = this.value;
+			  var idCity = <?php  echo $month[0] ?>;
 			  $("#hotels_id").html('');
 			  $.ajax({
 				  url: "{{url('api/fetch-hotel')}}",
@@ -281,33 +289,13 @@ origen.addEventListener("change", function(){
 					  $.each(result.hotels, function (key, value) {
 						  $("#hotels_id").append('<option value="' + value
 							  .id + '">' + value.hotel_name + '</option>');
+							  $global = $global + 80;
 					  });
 				  }
 			  });
 		  });
 
-		  	//Guia
-			  $('#to').ready(function () {
-			  var idCity = this.value;
-			  $("#guides_id").html('');
-			  $.ajax({
-				  url: "{{url('api/fetch-guide')}}",
-				  type: "POST",
-				  data: {
-					  city_id: idCity,
-					  _token: '{{csrf_token()}}'
-				  },
-				  dataType: 'json',
-				  success: function (result) {
-					  $('#guides_id').html('<option value="">-- Seleccione su Guía --</option>');
-					  $.each(result.guides, function (key, value) {
-						  $("#guides_id").append('<option value="' + value
-							  .id + '">' + value.guide_name + '</option>');
-					  });
-				  }
-			  });
-		  });
-   
+		  	
 });
 
 

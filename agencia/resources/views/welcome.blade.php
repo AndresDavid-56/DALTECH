@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
@@ -63,18 +64,14 @@
               <div class="rd-navbar-main">
                 <div class="rd-navbar-nav-wrap">
                   <ul class="list-inline list-inline-md rd-navbar-corporate-list-social">
-                    <li><a class="icon fa fa-facebook" href="#"></a></li>
-                    <li><a class="icon fa fa-twitter" href="#"></a></li>
-                    <li><a class="icon fa fa-google-plus" href="#"></a></li>
-                    <li><a class="icon fa fa-instagram" href="#"></a></li>
+                    <li><a class="icon fa fa-facebook" href="https://www.facebook.com/viajando.juntos.2022/"></a></li>
+                    <li><a class="icon fa fa-instagram" href="https://www.instagram.com/viajando_juntos01/"></a></li>
                   </ul>
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
                     <li class="rd-nav-item active"><a class="rd-nav-link" href="/">Inicio</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="about">Sobre Nosotros</a>
-                    </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="#">Próximamente</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="contact">Contáctanos</a>
                     </li>
@@ -197,7 +194,7 @@
                     <div class="box-icon-classic-icon fl-bigmug-line-equalization3"></div>
                   </div>
                   <div class="unit-body">
-                    <h5 class="box-icon-classic-title"><a href="#">La mejor experiencia</a></h5>
+                    <h5 class="box-icon-classic-title"><a href="">La mejor experiencia</a></h5>
                     <p class="box-icon-classic-text">Nuestro sistema permite encontrar el recorrido que desea para sus próximas vacaciones.</p>
                   </div>
                 </div>
@@ -210,7 +207,7 @@
                     <div class="box-icon-classic-icon fl-bigmug-line-circular220"></div>
                   </div>
                   <div class="unit-body">
-                    <h5 class="box-icon-classic-title"><a href="#">Amplia Variedad de Tours<rs</a></h5>
+                    <h5 class="box-icon-classic-title"><a href="">Amplia Variedad de Tours<rs</a></h5>
                     <p class="box-icon-classic-text">Ofrecemos una amplia variedad de tours elegidos personalmente con destinos en todo el País.</p>
                   </div>
                 </div>
@@ -223,7 +220,7 @@
                     <div class="box-icon-classic-icon fl-bigmug-line-wallet26"></div>
                   </div>
                   <div class="unit-body">
-                    <h5 class="box-icon-classic-title"><a href="#">Mejor Precio Garantizado</a></h5>
+                    <h5 class="box-icon-classic-title"><a href="">Mejor Precio Garantizado</a></h5>
                     <p class="box-icon-classic-text">Si encuentra tours más baratos que los nuestros, le compensamos la diferencia.</p>
                   </div>
                 </div>
@@ -240,7 +237,7 @@
             <div class="col-sm-6 col-md-5 col-lg-3">
               <!-- Team Modern-->
               <article class="team-modern">
-                <div class="team-modern-header"><a class="team-modern-figure" href="#"><img class="img-circles" src="images/user-1-118x118.jpg" alt="" width="118" height="118"/></a>
+                <div class="team-modern-header"><a class="team-modern-figure" href=""><img class="img-circles" src="images/usu.png" alt="" width="118" height="118"/></a>
                   <svg x="0px" y="0px" width="270px" height="70px" viewbox="0 0 270 70" enable-background="new 0 0 270 70" xml:space="preserve">
                     <g>
                       <path fill="#161616" d="M202.085,0C193.477,28.912,166.708,50,135,50S76.523,28.912,67.915,0H0v70h270V0H202.085z"></path>
@@ -248,16 +245,16 @@
                   </svg>
                 </div>
                 <div class="team-modern-caption">
-                  <h6 class="team-modern-name"><a href="#">Ana Navas</a></h6>
-                  <p class="team-modern-status">Founder, Owner</p>
-                  <h6 class="team-modern-phone"><a href="tel:#">+1 323-913-4688</a></h6>
+                  <h6 class="team-modern-name"><a href="">Ana Navas</a></h6>
+                  <p class="team-modern-status">Dueño del Negocio</p>
+                  <h6 class="team-modern-phone"><a href="tel:#">+593 099-913-4688</a></h6>
                 </div>
               </article>
             </div>
             <div class="col-sm-6 col-md-5 col-lg-3">
               <!-- Team Modern-->
               <article class="team-modern">
-                <div class="team-modern-header"><a class="team-modern-figure" href="#"><img class="img-circles" src="images/user-2-118x118.jpg" alt="" width="118" height="118"/></a>
+                <div class="team-modern-header"><a class="team-modern-figure" href=""><img class="img-circles" src="images/usu.png" alt="" width="118" height="118"/></a>
                   <svg x="0px" y="0px" width="270px" height="70px" viewbox="0 0 270 70" enable-background="new 0 0 270 70" xml:space="preserve">
                     <g>
                       <path fill="#161616" d="M202.085,0C193.477,28.912,166.708,50,135,50S76.523,28.912,67.915,0H0v70h270V0H202.085z"></path>
@@ -265,16 +262,16 @@
                   </svg>
                 </div>
                 <div class="team-modern-caption">
-                  <h6 class="team-modern-name"><a href="#">Andres Alvear</a></h6>
-                  <p class="team-modern-status">Travel Agent</p>
-                  <h6 class="team-modern-phone"><a href="tel:#">+1 323-913-4688</a></h6>
+                  <h6 class="team-modern-name"><a href="">Andres Alvear</a></h6>
+                  <p class="team-modern-status">Desarrollador Senior</p>
+                  <h6 class="team-modern-phone"><a href="tel:#">+593 099-913-4688</a></h6>
                 </div>
               </article>
             </div>
             <div class="col-sm-6 col-md-5 col-lg-3">
               <!-- Team Modern-->
               <article class="team-modern">
-                <div class="team-modern-header"><a class="team-modern-figure" href="#"><img class="img-circles" src="images/user-3-118x118.jpg" alt="" width="118" height="118"/></a>
+                <div class="team-modern-header"><a class="team-modern-figure" href=""><img class="img-circles" src="images/usu.png" alt="" width="118" height="118"/></a>
                   <svg x="0px" y="0px" width="270px" height="70px" viewbox="0 0 270 70" enable-background="new 0 0 270 70" xml:space="preserve">
                     <g>
                       <path fill="#161616" d="M202.085,0C193.477,28.912,166.708,50,135,50S76.523,28.912,67.915,0H0v70h270V0H202.085z"></path>
@@ -282,9 +279,9 @@
                   </svg>
                 </div>
                 <div class="team-modern-caption">
-                  <h6 class="team-modern-name"><a href="#">Dennis Quishpe</a></h6>
-                  <p class="team-modern-status">Tour Consultant</p>
-                  <h6 class="team-modern-phone"><a href="tel:#">+1 323-913-4688</a></h6>
+                  <h6 class="team-modern-name"><a href="">Dennis Quishpe</a></h6>
+                  <p class="team-modern-status">Desarrollador Junior</p>
+                  <h6 class="team-modern-phone"><a href="tel:#">+593 099-913-4688</a></h6>
                 </div>
               </article>
             </div>
@@ -302,49 +299,49 @@
             <article class="thumbnail thumbnail-mary">
               <div class="thumbnail-mary-figure"><img src="images/galeria1.png" alt="" width="270" height="195"/>
               </div>
-              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-1-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-1-270x195.jpg" alt="" width="270" height="195"/></a>
+              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/galeria1.png" data-lightgallery="item"><img src="images/galeria1.png" alt="" width="270" height="195"/></a>
               </div>
             </article>
             <!-- Thumbnail Classic-->
             <article class="thumbnail thumbnail-mary">
               <div class="thumbnail-mary-figure"><img src="images/galeria2.png" alt="" width="270" height="195"/>
               </div>
-              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-2-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-2-270x195.jpg" alt="" width="270" height="195"/></a>
+              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/galeria2.png" data-lightgallery="item"><img src="images/galeria2.png" alt="" width="270" height="195"/></a>
               </div>
             </article>
             <!-- Thumbnail Classic-->
             <article class="thumbnail thumbnail-mary">
               <div class="thumbnail-mary-figure"><img src="images/galeria3.png" alt="" width="270" height="195"/>
               </div>
-              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-3-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-3-270x195.jpg" alt="" width="270" height="195"/></a>
+              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/galeria3.png" data-lightgallery="item"><img src="images/galeria3.png" alt="" width="270" height="195"/></a>
               </div>
             </article>
             <!-- Thumbnail Classic-->
             <article class="thumbnail thumbnail-mary">
               <div class="thumbnail-mary-figure"><img src="images/galeria4.png" alt="" width="270" height="195"/>
               </div>
-              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-4-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-4-270x195.jpg" alt="" width="270" height="195"/></a>
+              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/galeria4.png" data-lightgallery="item"><img src="images/galeria4.png" alt="" width="270" height="195"/></a>
               </div>
             </article>
             <!-- Thumbnail Classic-->
             <article class="thumbnail thumbnail-mary">
               <div class="thumbnail-mary-figure"><img src="images/galeria5.png" alt="" width="270" height="195"/>
               </div>
-              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-5-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-5-270x195.jpg" alt="" width="270" height="195"/></a>
+              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/galeria5.png" data-lightgallery="item"><img src="images/galeria5.png" alt="" width="270" height="195"/></a>
               </div>
             </article>
             <!-- Thumbnail Classic-->
             <article class="thumbnail thumbnail-mary">
               <div class="thumbnail-mary-figure"><img src="images/galeria6.png" alt="" width="270" height="195"/>
               </div>
-              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-6-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-6-270x195.jpg" alt="" width="270" height="195"/></a>
+              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/galeria6.png" data-lightgallery="item"><img src="images/galeria6.png" alt="" width="270" height="195"/></a>
               </div>
             </article>
             <!-- Thumbnail Classic-->
             <article class="thumbnail thumbnail-mary">
               <div class="thumbnail-mary-figure"><img src="images/galeria7.png" alt="" width="270" height="195"/>
               </div>
-              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-7-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-7-270x195.jpg" alt="" width="270" height="195"/></a>
+              <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/galeria7.png" data-lightgallery="item"><img src="images/galeria7.png" alt="" width="270" height="195"/></a>
               </div>
             </article>
           </div>
@@ -376,7 +373,7 @@
                       <li>
                         <div class="unit">
                           <div class="unit-left"><span class="icon fa fa-location-arrow"></span></div>
-                          <div class="unit-body"><a class="link-location" href="#">Av. 12 de Octubre 1076, Quito 170143</a></div>
+                          <div class="unit-body"><a class="link-location" href="">Av. 12 de Octubre 1076, Quito 170143</a></div>
                         </div>
                       </li>
                     </ul>
@@ -386,17 +383,17 @@
               <div class="col-sm-6 col-md-5 col-lg-3 col-xl-4">
                 <div class="oh-desktop">
                   <div class="wow slideInDown" data-wow-delay="0s">
-                    <h6 class="text-spacing-100 text-uppercase">Noticias Populares</h6>
+                  <h6 class="text-spacing-100 text-uppercase">Noticias Populares</h6>
                     <!-- Post Minimal 2-->
                     <article class="post post-minimal-2">
-                      <p class="post-minimal-2-title"><a href="#">Enlaces pedientes</a></p>
+                      <p class="post-minimal-2-title"><a href="https://www.viator.com/es-ES/Ecuador/d727-ttd?m=26374&supag=65619063982&supsc=dsa-694098303804&supai=420430239824&supap=&supdv=c&supnt=nt%3Ag&suplp=9069516&supli=&supti=dsa-694098303804&tsem=true&supci=dsa-694098303804&supap1=&supap2=&gclid=CjwKCAjwh4ObBhAzEiwAHzZYU2SpNe1UNm8uH22VW4JXKRMTpRQLW7bV5Te-tL8KYr9fWfV9xFOlzRoCFKgQAvD_BwE">Mejores Lugares Turísticos</a></p>
                       <div class="post-minimal-2-time">
                         <time datetime="2019-05-04">Oct 12, 2022</time>
                       </div>
                     </article>
                     <!-- Post Minimal 2-->
                     <article class="post post-minimal-2">
-                      <p class="post-minimal-2-title"><a href="#">Enlaces pedientes</a></p>
+                      <p class="post-minimal-2-title"><a href="https://miaventuraviajando.com/top-7-mejores-playas-ecuador/">Mejores Playas</a></p>
                       <div class="post-minimal-2-time">
                         <time datetime="2019-05-04">Oct 12, 2022</time>
                       </div>
@@ -404,19 +401,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-sm-11 col-md-7 col-lg-5 col-xl-4">
-                <div class="oh-desktop">
-                  <div class="wow slideInLeft" data-wow-delay="0s">
-                    <h6 class="text-spacing-100 text-uppercase">Enlaces</h6>
-                    <ul class="row-6 list-0 list-marked list-marked-md list-marked-secondary list-custom-2">
-                      <li><a href="/">Inicio</a></li>
-                      <li><a href="about">Sobre nosotros</a></li>
-                      <li><a href="#">enlace pendiente</a></li>
-                      <li><a href="contact">Contáctanos</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>

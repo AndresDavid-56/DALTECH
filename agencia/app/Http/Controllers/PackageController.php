@@ -104,6 +104,9 @@ class PackageController extends Controller
         $packages->hotels_id = $request->get('hotels_id');
         $packages->user_id = $request->get('user_id');
 
+        $packages->status = $request->get('status');
+
+
         $packages->save();
 
         return redirect('/createpaypal');
@@ -161,6 +164,8 @@ class PackageController extends Controller
         $package->transports_id = $request->get('transports_id');
         $package->hotels_id = $request->get('hotels_id');
         $package->user_id = $request->get('user_id');
+
+        $packages->status = $request->get('status');
 
         $package->save();
 

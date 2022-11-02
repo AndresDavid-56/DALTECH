@@ -22,7 +22,7 @@ class StripeController extends Controller
 
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
         Stripe\Charge::create ([
-                "amount" => 100 * 100,
+                "amount" => "200",
                 "currency" => "usd",
                 "source" => $request->stripeToken,
                 "description" => "This payment is tested purpose"
@@ -30,7 +30,9 @@ class StripeController extends Controller
    
         Session::flash('success', 'Payment successful!');
            
-        return back();
+        return redirect()
+        ->route('paypal_finish')
+        ->with('success', 'Transacción completada.');
         
     }
 }

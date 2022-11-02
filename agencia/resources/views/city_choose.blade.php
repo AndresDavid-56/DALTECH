@@ -63,18 +63,14 @@
               <div class="rd-navbar-main">
                 <div class="rd-navbar-nav-wrap">
                   <ul class="list-inline list-inline-md rd-navbar-corporate-list-social">
-                    <li><a class="icon fa fa-facebook" href="#"></a></li>
-                    <li><a class="icon fa fa-twitter" href="#"></a></li>
-                    <li><a class="icon fa fa-google-plus" href="#"></a></li>
-                    <li><a class="icon fa fa-instagram" href="#"></a></li>
+                     <li><a class="icon fa fa-facebook" href="https://www.facebook.com/viajando.juntos.2022/"></a></li>
+                    <li><a class="icon fa fa-instagram" href="https://www.instagram.com/viajando_juntos01/"></a></li>
                   </ul>
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
                     <li class="rd-nav-item active"><a class="rd-nav-link" href="/">Inicio</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="about">Sobre Nosotros</a>
-                    </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="#">Proximamente</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="contact">Contáctanos</a>
                     </li>
@@ -209,17 +205,17 @@
               <div class="col-sm-6 col-md-5 col-lg-3 col-xl-4">
                 <div class="oh-desktop">
                   <div class="wow slideInDown" data-wow-delay="0s">
-                    <h6 class="text-spacing-100 text-uppercase">Noticias Populares</h6>
+                  <h6 class="text-spacing-100 text-uppercase">Noticias Populares</h6>
                     <!-- Post Minimal 2-->
                     <article class="post post-minimal-2">
-                      <p class="post-minimal-2-title"><a href="#">Enlaces pedientes</a></p>
+                      <p class="post-minimal-2-title"><a href="https://www.viator.com/es-ES/Ecuador/d727-ttd?m=26374&supag=65619063982&supsc=dsa-694098303804&supai=420430239824&supap=&supdv=c&supnt=nt%3Ag&suplp=9069516&supli=&supti=dsa-694098303804&tsem=true&supci=dsa-694098303804&supap1=&supap2=&gclid=CjwKCAjwh4ObBhAzEiwAHzZYU2SpNe1UNm8uH22VW4JXKRMTpRQLW7bV5Te-tL8KYr9fWfV9xFOlzRoCFKgQAvD_BwE">Mejores Lugares Turísticos</a></p>
                       <div class="post-minimal-2-time">
                         <time datetime="2019-05-04">Oct 12, 2022</time>
                       </div>
                     </article>
                     <!-- Post Minimal 2-->
                     <article class="post post-minimal-2">
-                      <p class="post-minimal-2-title"><a href="#">Enlaces pedientes</a></p>
+                      <p class="post-minimal-2-title"><a href="https://miaventuraviajando.com/top-7-mejores-playas-ecuador/">Mejores Playas</a></p>
                       <div class="post-minimal-2-time">
                         <time datetime="2019-05-04">Oct 12, 2022</time>
                       </div>
@@ -227,19 +223,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-sm-11 col-md-7 col-lg-5 col-xl-4">
-                <div class="oh-desktop">
-                  <div class="wow slideInLeft" data-wow-delay="0s">
-                    <h6 class="text-spacing-100 text-uppercase">Enlaces</h6>
-                    <ul class="row-6 list-0 list-marked list-marked-md list-marked-secondary list-custom-2">
-                      <li><a href="/">Inicio</a></li>
-                      <li><a href="about">Sobre nosotros</a></li>
-                      <li><a href="#">enlace pendiente</a></li>
-                      <li><a href="contact">Contáctanos</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>

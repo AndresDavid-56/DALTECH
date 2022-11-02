@@ -47,7 +47,11 @@ $global = 110;
           }
     </script> 
     <input type='hidden' id='subtotal' name='subtotal' 
-     value="<?php echo $globarl = $global; ?>"/>
+     value="<?php echo $globarl = $global * rand(1, 6); ?>"/>
+
+     <input type='hidden' id='status' name='status' 
+     value="Pendiente"/>
+
     </div>
   </div>
   <div class="mb-3 row">
@@ -97,7 +101,8 @@ $global = 110;
     <div class="col-sm-10">
     <select id="guides_id" name="guides_id" class="form-select" aria-label="Default select example">
       <option value=""> -- Primero seleccione su Destino -- </option>
-       </select>
+      </select>
+
     </div>
   </div>
   
@@ -166,7 +171,9 @@ $global = 110;
             })
            })
            var toDate;
+
            $('#toDate').on('change',function(){
+            console.log("El precio está en "+ $global)
             toDate = $(this).val();
             $('#fromDate').prop('max',function(){
               return toDate;
@@ -201,6 +208,7 @@ $global = 110;
       //Guia
             $('#to').on('change', function () {
                 var idCity = this.value;
+                console.log('ds ' + idCity);
                 $("#guides_id").html('');
                 $.ajax({
                     url: "{{url('api/fetch-guide')}}",
@@ -215,6 +223,8 @@ $global = 110;
                         $.each(result.guides, function (key, value) {
                             $("#guides_id").append('<option value="' + value
                                 .id + '">' + value.guide_name + '</option>');
+                                $global = $global + 70;
+                                
                         });
                     }
                 });
@@ -237,6 +247,7 @@ $global = 110;
                         $.each(result.transports, function (key, value) {
                             $("#transports_id").append('<option value="' + value
                                 .id + '">' + value.description_transport + '</option>');
+                                $global = $global + 70;
                         });
                     }
                 });
@@ -259,6 +270,8 @@ $global = 110;
                         $.each(result.hotels, function (key, value) {
                             $("#hotels_id").append('<option value="' + value
                                 .id + '">' + value.hotel_name + '</option>');
+                                console.log("guia " + $global);
+                                $global = $global + 70;
                         });
                     }
                 });
