@@ -14,31 +14,31 @@
    <div class="mb-3 row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Descripción</label>
     <div class="col-sm-10">
-    <input name="description_transport" id="description_transport" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <input required name="description_transport" id="description_transport" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
   </div>
   <div class="mb-3 row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Capacidad</label>
     <div class="col-sm-10">
-    <input name="capacity_transport" id="capacity_transport" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <input required name="capacity_transport" id="capacity_transport" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
   </div>
   <div class="mb-3 row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Precio Ida</label>
     <div class="col-sm-10">
-    <input name="price_one_way" id="price_one_way" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <input required name="price_one_way" id="price_one_way" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
   </div>
   <div class="mb-3 row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Precio Vuelta</label>
     <div class="col-sm-10">
-    <input name="price_round_trip" id="price_round_trip" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <input required name="price_round_trip" id="price_round_trip" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
   </div>
   <div class="mb-3 row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Número de Asiento</label>
     <div class="col-sm-10">
-    <input name="seat_number" id="seat_number" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <input required name="seat_number" id="seat_number" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
   </div>
   <div class="mb-3 row">

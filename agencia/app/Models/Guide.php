@@ -11,4 +11,9 @@ class Guide extends Model
     public function city(){
         return $this->belongsTo(City::class, 'city_id');
     }
+
+    protected $fillable = [
+        'guide_name', 'city_id'
+    ];
+
 }

@@ -10,7 +10,7 @@
 @can('user')    
 <div class="card w-80">
   <div class="card-body">
-    <h1 class="h2">Bienvenido,  {{ Auth::user()->name }} !</h1>
+    <h1 class="h2">Bienvenido {{ Auth::user()->name }}</h1>
     <p class="card-text">Para volver a la página principal, selecciona el botón.</p>
     <a href="/" class="btn btn-primary">Volver a la Página Principal</a>
   </div>
@@ -20,7 +20,7 @@
 @can('package.create')    
 <div class="card w-80">
   <div class="card-body">
-    <h1 class="h2">Bienvenido,  {{ Auth::user()->name }} !</h1>
+    <h1 class="h2">Bienvenido {{ Auth::user()->name }}</h1>
     <p class="card-text">Haz Ingresado como Administrador</p>
 
     <a href="/" class="btn btn-primary">Volver a la Página Principal</a>

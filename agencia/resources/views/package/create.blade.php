@@ -20,7 +20,7 @@ $global = 110;
    <div class="mb-3 row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Fecha de Inicio</label>
     <div class="col-sm-10">
-    <input class="" type="date" id="fromDate" name="start_date"
+    <input class="" type="date" required id="fromDate" name="start_date"
        value=""
        min="<?php $fecha = date('Y-m-d');
        echo $fecha;?>">
@@ -29,7 +29,7 @@ $global = 110;
   <div class="mb-3 row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Fecha de Regreso</label>
     <div class="col-sm-10">
-    <input class="" type="date" id="toDate" name="exit_date"
+    <input class="" type="date" required id="toDate" name="exit_date"
        value=""
        min="<?php $fecha = date('Y-m-d');
        echo $fecha;?>">
@@ -39,7 +39,7 @@ $global = 110;
   <div class="mb-3 row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Subtotal</label>
     <div class="col-sm-10">
-    <input disabled value="El Campo se generará automaticamente" alpha type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <input disabled  value="El Campo se generará automaticamente" alpha type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     <script>
      function total() {
             $global = $global * 2 + $global * 1.2 + $global * 1.1;
@@ -53,19 +53,19 @@ $global = 110;
   <div class="mb-3 row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Adultos</label>
     <div class="col-sm-10">
-    <input name="adults_number" id="adults_number" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <input name="adults_number" required id="adults_number" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
   </div>
   <div class="mb-3 row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Niños</label>
     <div class="col-sm-10">
-    <input name="children_number" id="children_number" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <input name="children_number" required id="children_number" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
   </div>
   <div class="mb-3 row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Tercera Edad</label>
     <div class="col-sm-10">
-    <input name="elderly_number" id="elderly_number" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <input name="elderly_number" required id="elderly_number" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
   </div>
   <div class="mb-3 row">
@@ -91,65 +91,37 @@ $global = 110;
     </div>
   </div>
 
-
+  
   <div class="mb-3 row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Guía</label>
     <div class="col-sm-10">
-    <select onchange="myFunction()" id="guides_id" name="guides_id" class="form-select" aria-label="Default select example">
-       <option value=""> -- Seleccione el guía -- </option>  
-       @foreach ($guides as $guide)  
-         <option  value="{{ $guide['id'] }}">{{$guide['guide_name']}}</option>
-
-      <script>
-          function myFunction() {
-            console.log({{$guide['price_per_day']}});
-            $globarl = $global + {{$guide['price_per_day']}}
-            $global = $global + {{$guide['price_per_day']}}
-            console.log($global);
-          }
-      </script>
-       @endforeach
+    <select id="guides_id" name="guides_id" class="form-select" aria-label="Default select example">
+      <option value=""> -- Primero seleccione su Destino -- </option>
        </select>
     </div>
   </div>
+  
+
   <div class="mb-3 row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Transporte</label>
     <div class="col-sm-10">
-    <select onchange="myFunction2()" id="transports_id" name="transports_id" class="form-select" aria-label="Default select example">
-       <option value=""> -- Seleccione el Transporte -- </option>  
-       @foreach ($transports as $transport)  
-         <option value="{{ $transport['id'] }}">{{$transport['description_transport']}}</option>
-         <script>
-          function myFunction2() {
-            console.log({{$transport['price_one_way']}});
-            $globarl =  $global + {{$transport['price_one_way']}}
-            $global = $global + {{$transport['price_one_way']}}
-            console.log($global);
-          }
-      </script>
-       @endforeach
+    <select id="transports_id" name="transports_id" class="form-select" aria-label="Default select example">
+      <option value=""> -- Primero seleccione su Destino -- </option>
        </select>
     </div>
   </div>
+
+
   <div class="mb-3 row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Hotel</label>
     <div class="col-sm-10">
-    <select onchange="myFunction3()"  id="hotels_id" name="hotels_id" class="form-select" aria-label="Default select example">
-       <option value=""> -- Seleccione el Hotel -- </option>  
-       @foreach ($hotels as $hotel)  
-         <option value="{{ $hotel['id'] }}">{{$hotel['hotel_name']}}</option>
-         <script>
-          function myFunction3() {
-            console.log({{$hotel['price_per_night']}});
-            $globarl = $global + {{$hotel['price_per_night']}}
-            $global = $global + {{$hotel['price_per_night']}}
-            console.log($global);
-          }
-      </script>
-       @endforeach
+    <select id="hotels_id" name="hotels_id" class="form-select" aria-label="Default select example">
+    <option value=""> -- Primero seleccione su Destino -- </option>
        </select>
     </div>
   </div>
+
+
   <div class="mb-3 row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Usuario</label>
     <div class="col-sm-10">
@@ -222,4 +194,78 @@ $global = 110;
     });
   </script>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script>
+   $(document).ready(function () {
+      //Guia
+            $('#to').on('change', function () {
+                var idCity = this.value;
+                $("#guides_id").html('');
+                $.ajax({
+                    url: "{{url('api/fetch-guide')}}",
+                    type: "POST",
+                    data: {
+                        city_id: idCity,
+                        _token: '{{csrf_token()}}'
+                    },
+                    dataType: 'json',
+                    success: function (result) {
+                        $('#guides_id').html('<option value="">-- Seleccione su Guía --</option>');
+                        $.each(result.guides, function (key, value) {
+                            $("#guides_id").append('<option value="' + value
+                                .id + '">' + value.guide_name + '</option>');
+                        });
+                    }
+                });
+            });
+
+            //Transporte
+            $('#to').on('change', function () {
+                var idCity = this.value;
+                $("#transports_id").html('');
+                $.ajax({
+                    url: "{{url('api/fetch-transport')}}",
+                    type: "POST",
+                    data: {
+                        city_id: idCity,
+                        _token: '{{csrf_token()}}'
+                    },
+                    dataType: 'json',
+                    success: function (result) {
+                        $('#transports_id').html('<option value="">-- Seleccione su Transporte --</option>');
+                        $.each(result.transports, function (key, value) {
+                            $("#transports_id").append('<option value="' + value
+                                .id + '">' + value.description_transport + '</option>');
+                        });
+                    }
+                });
+            });
+
+            //Hotel
+            $('#to').on('change', function () {
+                var idCity = this.value;
+                $("#hotels_id").html('');
+                $.ajax({
+                    url: "{{url('api/fetch-hotel')}}",
+                    type: "POST",
+                    data: {
+                        city_id: idCity,
+                        _token: '{{csrf_token()}}'
+                    },
+                    dataType: 'json',
+                    success: function (result) {
+                        $('#hotels_id').html('<option value="">-- Seleccione su Hotel --</option>');
+                        $.each(result.hotels, function (key, value) {
+                            $("#hotels_id").append('<option value="' + value
+                                .id + '">' + value.hotel_name + '</option>');
+                        });
+                    }
+                });
+            });
+     
+  });
+
+
+  </script>
 @stop

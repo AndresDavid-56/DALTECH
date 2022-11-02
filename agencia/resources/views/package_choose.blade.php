@@ -155,11 +155,9 @@ console.log();
 									<div class="col-md-4">
 										<div class="form-group">
 											<span class="form-label">Transporte</span>
-											<select name="transports_id" id="transport_id" class="form-control">
-											@foreach ($transports as $transport)
-									         <option value="{{ $transport['id'] }}">{{$transport['description_transport']}}</option>
-       										@endforeach
-											</select>
+											<select  id="transports_id" name="transports_id" class="form-control">
+											<option value=""> -- Primero seleccione su Destino -- </option>
+       										</select>
 											<span class="select-arrow"></span>
 										</div>
 									</div>
@@ -167,10 +165,8 @@ console.log();
 										<div class="form-group">
 											<span class="form-label">Hotel</span>
 											<select name="hotels_id" id="hotels_id" class="form-control">
-											@foreach ($hotels as $hotel)
-									         <option value="{{ $hotel['id'] }}">{{$hotel['hotel_name']}}</option>
-       										@endforeach
-											</select>
+											<option value=""> -- Primero seleccione su Destino -- </option>
+       										</select>
 											<span class="select-arrow"></span>
 										</div>
 									</div>
@@ -240,6 +236,81 @@ origen.addEventListener("change", function(){
 	  alert("Ciudad de Origen igual a la de Destino !");
 	}
 });
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+ $(document).ready(function () {
+		  //Transporte
+		  $('#to').ready(function () {
+			  var idCity = this.value;
+			  $("#transports_id").html('');
+			  $.ajax({
+				  url: "{{url('api/fetch-transport')}}",
+				  type: "POST",
+				  data: {
+					  city_id: idCity,
+					  _token: '{{csrf_token()}}'
+				  },
+				  dataType: 'json',
+				  success: function (result) {
+					  $('#transports_id').html('<option value="">-- Seleccione su Transporte --</option>');
+					  $.each(result.transports, function (key, value) {
+						  $("#transports_id").append('<option value="' + value
+							  .id + '">' + value.description_transport + '</option>');
+					  });
+				  }
+			  });
+		  });
+
+		  //Hotel
+		  $('#to').ready(function () {
+			  var idCity = this.value;
+			  $("#hotels_id").html('');
+			  $.ajax({
+				  url: "{{url('api/fetch-hotel')}}",
+				  type: "POST",
+				  data: {
+					  city_id: idCity,
+					  _token: '{{csrf_token()}}'
+				  },
+				  dataType: 'json',
+				  success: function (result) {
+					  $('#hotels_id').html('<option value="">-- Seleccione su Hotel --</option>');
+					  $.each(result.hotels, function (key, value) {
+						  $("#hotels_id").append('<option value="' + value
+							  .id + '">' + value.hotel_name + '</option>');
+					  });
+				  }
+			  });
+		  });
+
+		  	//Guia
+			  $('#to').ready(function () {
+			  var idCity = this.value;
+			  $("#guides_id").html('');
+			  $.ajax({
+				  url: "{{url('api/fetch-guide')}}",
+				  type: "POST",
+				  data: {
+					  city_id: idCity,
+					  _token: '{{csrf_token()}}'
+				  },
+				  dataType: 'json',
+				  success: function (result) {
+					  $('#guides_id').html('<option value="">-- Seleccione su Guía --</option>');
+					  $.each(result.guides, function (key, value) {
+						  $("#guides_id").append('<option value="' + value
+							  .id + '">' + value.guide_name + '</option>');
+					  });
+				  }
+			  });
+		  });
+   
+});
+
+
 </script>
 
 

@@ -47,7 +47,7 @@
                   
                   @if (Route::has('login'))
                     @auth
-                    <p class="h4">Bienvenido,  {{ Auth::user()->name }}  </p>
+                    <p class="h4">Bienvenido {{ Auth::user()->name }}  </p>
                     <a class="button button-md button-default-outline-2 button-ujarak" href="{{ url('/dashboard') }}">Mi Cuenta</a>
                     @else
                     <a class="button button-md button-default-outline-2 button-ujarak" href="{{ route('login') }}">Iniciar Sesión</a>
@@ -74,7 +74,7 @@
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="about">Sobre Nosotros</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="#">Proximamente</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="#">Próximamente</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="contact">Contáctanos</a>
                     </li>
@@ -148,39 +148,7 @@
         <!-- Swiper Pagination-->
         <div class="swiper-pagination"></div>
       </section>
-      <!-- Section Box Categories-->
-      <section class="section section-lg section-top-1 bg-gray-4">
-        <div class="container offset-negative-1">
-          <div class="box-categories cta-box-wrap">
-            <div class="box-categories-content">
-              <div class="row justify-content-center">
-                <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
-                  <ul class="list-marked-2 box-categories-list">
-                    <li><a href="city_choose"><img src="images/quito.png" alt="" width="368" height="420"/></a>
-                      <h5 class="box-categories-title">Quito</h5>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
-                  <ul class="list-marked-2 box-categories-list">
-                    <li><a href="city_choose"><img src="images/guayaquil.png" alt="" width="368" height="420"/></a>
-                      <h5 class="box-categories-title">Guayaquil</h5>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
-                  <ul class="list-marked-2 box-categories-list">
-                    <li><a href="city_choose"><img src="images/cuenca.png" alt="" width="368" height="420"/></a>
-                      <h5 class="box-categories-title">Cuenca</h5>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div><a class="link-classic wow fadeInUp" href="city_choose">Otros Destinos<span></span></a>
-          <!-- Owl Carousel-->
-        </div>
-      </section>
+     
       <!-- Discover New Horizons-->
       <section class="section section-sm section-first bg-default text-md-left">
         <div class="container">
@@ -264,51 +232,7 @@
           </div>
         </div>
       </section>
-      <!-- Hot tours-->
-      <section class="section section-sm bg-default">
-        <div class="container">
-          <h3 class="oh-desktop"><span class="d-inline-block wow slideInDown">Promociones</span></h3>
-          <div class="row row-sm row-40 row-md-50">
-            <div class="col-sm-6 col-md-12 wow fadeInRight">
-              <!-- Product Big-->
-              <article class="product-big">
-                <div class="unit flex-column flex-md-row align-items-md-stretch">
-                  <div class="unit-left"><a class="product-big-figure" href="#"><img src="images/atacames.jpg" alt="" width="600" height="366"/></a></div>
-                  <div class="unit-body">
-                    <div class="product-big-body">
-                      <h5 class="product-big-title"><a href="#">Atacames</a></h5>
-                      <div class="group-sm group-middle justify-content-start">
-                        <div class="product-big-rating"><span class="icon material-icons-star"></span><span class="icon material-icons-star"></span><span class="icon material-icons-star"></span><span class="icon material-icons-star"></span><span class="icon material-icons-star_half"></span></div><a class="product-big-reviews" href="#">4 opiniones de clientes</a>
-                      </div>
-                      <p class="product-big-text">Atacames es la playa natural más grande del Ecuador y la más cercana a la capital, Quito; por lo que la mayoría de los habitantes de esta ciudad hacen de este balneario el más concurrido y popular del país..</p><a class="button button-black-outline button-ujarak" href="#">Comprar ahora</a>
-                      <div class="product-big-price-wrap"><span class="product-big-price">$15</span></div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="col-sm-6 col-md-12 wow fadeInLeft">
-              <!-- Product Big-->
-              <article class="product-big">
-                <div class="unit flex-column flex-md-row align-items-md-stretch">
-                  <div class="unit-left"><a class="product-big-figure" href="#"><img src="images/ambato2.jpg" alt="" width="600" height="366"/></a></div>
-                  <div class="unit-body">
-                    <div class="product-big-body">
-                      <h5 class="product-big-title"><a href="#">Ambato</a></h5>
-                      <div class="group-sm group-middle justify-content-start">
-                        <div class="product-big-rating"><span class="icon material-icons-star"></span><span class="icon material-icons-star"></span><span class="icon material-icons-star"></span><span class="icon material-icons-star"></span><span class="icon material-icons-star_half"></span></div><a class="product-big-reviews" href="#">5 opiniones de clientes</a>
-                      </div>
-                      <p class="product-big-text">Ambato, también conocida como San Juan Bautista de Ambato, es una ciudad ecuatoriana; cabecera cantonal del Cantón Ambato y capital de la Provincia de Tungurahua, así como la urbe más grande y poblada de la misma..</p><a class="button button-black-outline button-ujarak" href="#">Comprar ahora</a>
-                      <div class="product-big-price-wrap"><span class="product-big-price">$13</span></div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Different People-->
+       <!-- Different People-->
       <section class="section section-sm">
         <div class="container">
           <h3 class="title-block find-car oh"><span class="d-inline-block wow slideInUp">Involucrados</span></h3>
@@ -435,7 +359,7 @@
               <div class="col-sm-6 col-md-12 col-lg-3 col-xl-4">
                 <div class="oh-desktop">
                   <div class="wow slideInRight" data-wow-delay="0s">
-                    <h6 class="text-spacing-100 text-uppercase">Contactanos</h6>
+                    <h6 class="text-spacing-100 text-uppercase">Contáctanos</h6>
                     <ul class="footer-contacts d-inline-block d-sm-block">
                       <li>
                         <div class="unit">

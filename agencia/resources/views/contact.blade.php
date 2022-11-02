@@ -48,7 +48,7 @@
                   
                 @if (Route::has('login'))
                     @auth
-                    <p class="h4">Bienvenido,  {{ Auth::user()->name }}  </p>
+                    <p class="h4">Bienvenido {{ Auth::user()->name }}  </p>
                     <a class="button button-md button-default-outline-2 button-ujarak" href="{{ url('/dashboard') }}">Mi Cuenta</a>
                     @else
                     <a class="button button-md button-default-outline-2 button-ujarak" href="{{ route('login') }}">Iniciar Sesión</a>
@@ -71,13 +71,13 @@
                   </ul>
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
-                    <li class="rd-nav-item active"><a class="rd-nav-link" href="/">Inicio</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="/">Inicio</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="about">Sobre Nosotros</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="#">Proximamente</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="#">Próximamente</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="contact">Contáctanos</a>
+                    <li class="rd-nav-item active"><a class="rd-nav-link" href="contact">Contáctanos</a>
                     </li>
                   </ul>
                 </div>
@@ -145,7 +145,7 @@
               <div class="col-sm-6 col-md-12 col-lg-3 col-xl-4">
                 <div class="oh-desktop">
                   <div class="wow slideInRight" data-wow-delay="0s">
-                    <h6 class="text-spacing-100 text-uppercase">Contactanos</h6>
+                    <h6 class="text-spacing-100 text-uppercase">Contáctanos</h6>
                     <ul class="footer-contacts d-inline-block d-sm-block">
                       <li>
                         <div class="unit">

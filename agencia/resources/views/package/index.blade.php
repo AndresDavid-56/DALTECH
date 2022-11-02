@@ -59,8 +59,7 @@
             <form action="{{ route('packages.destroy', $package->id)}} " method="POST">
                 <a href="packages/{{$package->id}}/edit" class="btn btn-info">Editar</a> 
                 @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger">Borrar</button>
+               
             </form>                
         </td>
         @endcan

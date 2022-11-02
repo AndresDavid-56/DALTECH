@@ -12,8 +12,31 @@
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/fonts.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<style type="text/css">
+.panel-title {
+display: inline;
+font-weight: bold;
+}
+.display-table {
+display: table;
+}
+.display-tr {
+display: table-row;
+}
+.display-td {
+display: table-cell;
+vertical-align: middle;
+width: 61%;
+}
+</style>
+    
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+
   </head>
 
   <body >
@@ -74,7 +97,7 @@
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="about">Sobre Nosotros</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="#">Proximamente</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="#">Próximamente</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="contact">Contáctanos</a>
                     </li>
@@ -89,15 +112,90 @@
 <br>
 <br>
       <div class="card container">
-  <div class="card-header"><p class="h5">Selección de Paquete Completado</p>
+  <div class="card-header"><p class="h5">{{ Auth::user()->name }}, su paquete se ha completado.</p>
     
   </div>
   <div class="card-body">
-    <h5 class="card-title"><p class="h5">Estimado,  {{ Auth::user()->name }}  </p></h5>
     <p class="card-text">Para finalizar con el proceso de compra del paquete es necesario realizar el
          pago correspondiente.</p><br>
-    <a class="btn btn-primary" href="{{route('processPaypal')}}">Realizar el Pago</a>
+    <a class="btn btn-primary" href="{{route('processPaypal')}}">Pagar Mediante Paypal</a>    
   </div>
+
+
+  <div>
+  <div class="container">
+
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+<div class="panel panel-default credit-card-box">
+<div class="panel-heading display-table" >
+<div class="row display-tr" >
+<h3 class="panel-title display-td" >Payment Details</h3>
+
+</div>
+</div>
+<div class="panel-body">
+@if (Session::has('success'))
+<div class="alert alert-success text-center">
+<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+<p>{{ Session::get('success') }}</p>
+</div>
+@endif
+<form
+role="form"
+action="{{route('stripe.post')}}"
+method="post"
+class="require-validation"
+data-cc-on-file="false"
+data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"
+id="payment-form">
+@csrf
+<div class='form-row row'>
+<div class='col-xs-12 form-group required'>
+<label class='control-label'>Name on Card</label> <input
+class='form-control' size='4' type='text'>
+</div>
+</div>
+<div class='form-row row'>
+<div class='col-xs-12 form-group card required'>
+<label class='control-label'>Card Number</label> <input
+autocomplete='off' class='form-control card-number' size='20'
+type='text'>
+</div>
+</div>
+<div class='form-row row'>
+<div class='col-xs-12 col-md-4 form-group cvc required'>
+<label class='control-label'>CVC</label> <input autocomplete='off'
+class='form-control card-cvc' placeholder='ex. 311' size='4'
+type='text'>
+</div>
+<div class='col-xs-12 col-md-4 form-group expiration required'>
+<label class='control-label'>Expiration Month</label> <input
+class='form-control card-expiry-month' placeholder='MM' size='2'
+type='text'>
+</div>
+<div class='col-xs-12 col-md-4 form-group expiration required'>
+<label class='control-label'>Expiration Year</label> <input
+class='form-control card-expiry-year' placeholder='YYYY' size='4'
+type='text'>
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-12">
+<button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now ($100)</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+ 
+  </div>
+
 </div>
 
 
@@ -111,7 +209,7 @@
               <div class="col-sm-6 col-md-12 col-lg-3 col-xl-4">
                 <div class="oh-desktop">
                   <div class="wow slideInRight" data-wow-delay="0s">
-                    <h6 class="text-spacing-100 text-uppercase">Contactanos</h6>
+                    <h6 class="text-spacing-100 text-uppercase">Contáctanos</h6>
                     <ul class="footer-contacts d-inline-block d-sm-block">
                       <li>
                         <div class="unit">
@@ -203,5 +301,59 @@ function fireSweetAlert() {
 }
 
 </script>
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+$(function() {
+var $form = $(".require-validation");
+$('form.require-validation').bind('submit', function(e) {
+var $form = $(".require-validation"),
+inputSelector = ['input[type=email]', 'input[type=password]',
+'input[type=text]', 'input[type=file]',
+'textarea'
+].join(', '),
+$inputs = $form.find('.required').find(inputSelector),
+$errorMessage = $form.find('div.error'),
+valid = true;
+$errorMessage.addClass('hide');
+$('.has-error').removeClass('has-error');
+$inputs.each(function(i, el) {
+var $input = $(el);
+if ($input.val() === '') {
+$input.parent().addClass('has-error');
+$errorMessage.removeClass('hide');
+e.preventDefault();
+}
+});
+if (!$form.data('cc-on-file')) {
+e.preventDefault();
+Stripe.setPublishableKey($form.data('stripe-publishable-key'));
+Stripe.createToken({
+number: $('.card-number').val(),
+cvc: $('.card-cvc').val(),
+exp_month: $('.card-expiry-month').val(),
+exp_year: $('.card-expiry-year').val()
+}, stripeResponseHandler);
+}
+});
+function stripeResponseHandler(status, response) {
+if (response.error) {
+$('.error')
+.removeClass('hide')
+.find('.alert')
+.text(response.error.message);
+} else {
+/* token contains id, last4, and card type */
+var token = response['id'];
+$form.find('input[type=text]').empty();
+$form.append("<input type='hidden' name='stripeToken' value='" + token + "'/>");
+$form.get(0).submit();
+}
+}
+});
+</script>
+
+
+
   </body>
 </html>

@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaypalController;
+use App\Http\Controllers\StripeController;
+
+  
+use App\Http\Controllers\DropDownController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,12 @@ use App\Http\Controllers\PaypalController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//DropwDown
+Route::get('dropdown', [DropDownController::class, 'index']);
+Route::get('dropdown2', [DropDownController::class, 'index2']);
+Route::post('api/fetch-guide', [DropdownController::class, 'fetchGuide']);
+Route::post('api/fetch-transport', [DropdownController::class, 'fetchTransport']);
+Route::post('api/fetch-hotel', [DropdownController::class, 'fetchHotel']);
 
  
 //Ruta de Página Princial - Inicio
@@ -32,6 +42,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
+    
 
 route::get('createpaypal',[PaypalController::class,'createpaypal'])->name('createpaypal');
 route::get('processPaypal',[PaypalController::class,'processPaypal'])->name('processPaypal');
@@ -41,6 +52,16 @@ Route::get('paypal_finish', function () {
     return view('paypal_finish');})->name('paypal_finish');
 });
 
+
+//Stripe
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+route::get('createpaypal',[StripeController::class,'stripe']);
+route::post('createpaypal',[StripeController::class,'stripePost'])->name('stripe.post');
+});
 
 
 Route::middleware([
