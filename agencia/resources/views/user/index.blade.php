@@ -33,8 +33,7 @@
             <form action="{{ route('users.destroy', $user->id)}} " method="POST">
                 <a href="users/{{$user->id}}/edit" class="btn btn-info">Editar</a> 
                 @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger">Borrar</button>
+     
             </form>                
         </td>
     </tr>

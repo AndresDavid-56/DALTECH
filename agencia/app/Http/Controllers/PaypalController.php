@@ -30,7 +30,8 @@ public function processPaypal(Request $request)
                 0 => [
                     "amount" => [
                         "currency_code" => "USD",
-                        "value" => "200"
+                        "value" => "250.00"
+
                     ]
                 ]
             ]

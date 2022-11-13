@@ -38,14 +38,19 @@
         width: 61%;
     }
     </style>
-        <script>
+    <script>
     <?php
 
   $con = new mysqli('localhost','root','','agencia03');
  
-  //Creación de Paquetes por mes 
+  //Creación de Paquetes por mes {$_GET['id']} $decrypted = Crypt::decryptString($encryptedValue)
+
   $query = $con->query("
-  Select * from packages order by id DESC LIMIT 1
+  Select * from packages where id = '{$_GET['id']}'
+  ");
+
+  $query2 = $con->query("
+  INSERT INTO tmp (id, valor) VALUES (NULL, '{$_GET['id']}');
   ");
 
   foreach($query as $data){
@@ -170,8 +175,8 @@
             </div>
             <div class="card-body">
                 <p class="card-text">Para finalizar con el proceso de compra del paquete es necesario realizar el
-  pago correspondiente.</p><br>
-  <h3>Total a pagar :  $ <?php  echo $subtotal ?>  USD</h3>
+                    pago correspondiente.</p><br>
+                <h3>Total a pagar : $ <?php  echo $subtotal ?> USD</h3>
             </div>
 
             <div>
@@ -237,7 +242,7 @@
                                         </div>
                                     </form>
                                     <br><br>
-                                    <a class="btn btn-primary" href="{{route('processPaypal')}}">Pagar Mediante
+                                    <a class="btn btn-primary" name="valor" id="valor" value="<?php  echo $subtotal ?>" href="{{route('processPaypal')}}">Pagar Mediante
                                         Paypal</a>
 
 

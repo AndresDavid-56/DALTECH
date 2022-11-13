@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
-    <title>Home</title>
+    <title>Inicio</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -129,7 +129,7 @@
                 <div class="row">
                   <div class="col-md-10">
                     <h6 class="text-uppercase" data-caption-animate="fadeInRight" data-caption-delay="0">Elige el destino de tus próximas vacaciones con nosotros</h6>
-                    <h2 class="oh font-weight-light" data-caption-animate="slideInUp" data-caption-delay="100"><span>Elige</span><span class="font-weight-bold"> Tú recorrido</span></h2>
+                    <h2 class="oh font-weight-light" data-caption-animate="slideInUp" data-caption-delay="100"><span>Elige</span><span class="font-weight-bold"> Tu recorrido</span></h2>
                     @if (Route::has('login')) 
                     @auth
                     <a class="button button-default-outline button-ujarak" href="city_choose" data-caption-animate="fadeInLeft" data-caption-delay="0">Saber más</a>
@@ -247,7 +247,7 @@
                 <div class="team-modern-caption">
                   <h6 class="team-modern-name"><a href="">Ana Navas</a></h6>
                   <p class="team-modern-status">Dueño del Negocio</p>
-                  <h6 class="team-modern-phone"><a href="tel:#">+593 099-913-4688</a></h6>
+                  <h6 class="team-modern-phone"><a href="tel:#">+593 99-913-4688</a></h6>
                 </div>
               </article>
             </div>
@@ -262,9 +262,9 @@
                   </svg>
                 </div>
                 <div class="team-modern-caption">
-                  <h6 class="team-modern-name"><a href="">Andres Alvear</a></h6>
+                  <h6 class="team-modern-name"><a href="">Andrés Alvear</a></h6>
                   <p class="team-modern-status">Desarrollador Senior</p>
-                  <h6 class="team-modern-phone"><a href="tel:#">+593 099-913-4688</a></h6>
+                  <h6 class="team-modern-phone"><a href="tel:#">+593 99-913-4688</a></h6>
                 </div>
               </article>
             </div>
@@ -281,7 +281,7 @@
                 <div class="team-modern-caption">
                   <h6 class="team-modern-name"><a href="">Dennis Quishpe</a></h6>
                   <p class="team-modern-status">Desarrollador Junior</p>
-                  <h6 class="team-modern-phone"><a href="tel:#">+593 099-913-4688</a></h6>
+                  <h6 class="team-modern-phone"><a href="tel:#">+593 99-913-4688</a></h6>
                 </div>
               </article>
             </div>

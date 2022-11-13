@@ -45,8 +45,7 @@
             <form action="{{ route('hotels.destroy', $hotel->id)}} " method="POST">
                 <a href="hotels/{{$hotel->id}}/edit" class="btn btn-info">Editar</a> 
                 @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger">Borrar</button>
+                
             </form>                
         </td>
     </tr>

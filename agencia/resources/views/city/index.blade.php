@@ -27,8 +27,6 @@
             <form action="{{ route('cities.destroy', $city->id)}} " method="POST">
                 <a href="cities/{{$city->id}}/edit" class="btn btn-info">Editar</a> 
                 @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger">Borrar</button>
             </form>                
         </td>
     </tr>

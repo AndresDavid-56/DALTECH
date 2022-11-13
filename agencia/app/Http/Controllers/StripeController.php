@@ -15,14 +15,12 @@ class StripeController extends Controller
         return view('paypal_view');
     }
 
-
-
     public function stripePost(Request $request)
     {
 
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
         Stripe\Charge::create ([
-                "amount" => "200",
+                "amount" => 200*200,
                 "currency" => "usd",
                 "source" => $request->stripeToken,
                 "description" => "This payment is tested purpose"

@@ -46,7 +46,7 @@
     <label for="inputPassword" class="col-sm-2 col-form-label">Rol</label>
     <div class="col-sm-10">
 
-
+<!-- 
     @foreach ($roles as $role)
     <div class="form-check">
     <input value="{{$role->id}}" class="form-check-input" type="radio" name="roles[]" >
@@ -54,8 +54,14 @@
         {{$role->name}} 
       </label>
     </div>
-    @endforeach
+    @endforeach -->
 
+    <div class="form-check">
+    <input value="1" class="form-check-input" type="radio" name="roles[]" >
+      <label value="1" class="form-check-label">
+        Admin 
+      </label>
+    </div>
 
     </div>
   </div>

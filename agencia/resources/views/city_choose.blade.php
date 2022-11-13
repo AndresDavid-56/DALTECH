@@ -47,7 +47,7 @@
                   
                 @if (Route::has('login'))
                     @auth
-                    <p class="h4">Bienvenido,  {{ Auth::user()->name }}  </p>
+                    <p class="h4">Bienvenido {{ Auth::user()->name }}  </p>
                     <a class="button button-md button-default-outline-2 button-ujarak" href="{{ url('/dashboard') }}">Mi Cuenta</a>
                     @else
                     <a class="button button-md button-default-outline-2 button-ujarak" href="{{ route('login') }}">Iniciar Sesión</a>

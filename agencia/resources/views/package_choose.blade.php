@@ -65,7 +65,7 @@ console.log();
 								<div class="form-group">
 									<div class="form-checkbox">
 										<label for="roundtrip">
-											<input type="radio" id="roundtrip" name="flight-type">
+											<input required type="radio" id="roundtrip" name="flight-type">
 											<span></span>Ida y Vuelta
 										</label>
 										<label for="one-way">
@@ -115,13 +115,12 @@ console.log();
 									<div class="col-md-4">
 										<div class="form-group">
 											<span class="form-label">Adultos (18-60)</span>
-											<select name="adults_number" id="adults_number" class="form-control">
+											<select required name="adults_number" id="adults_number" class="form-control">
 												<option>1</option>
 												<option>2</option>
 												<option>3</option>
 												<option>4</option>
-												<option>5</option>
-												<option>6</option>
+
 											</select>
 											<span class="select-arrow"></span>
 										</div>
@@ -129,14 +128,12 @@ console.log();
 									<div class="col-md-4">
 										<div class="form-group">
 											<span class="form-label">Niños (0-17)</span>
-											<select name="children_number" id="children_number" class="form-control">
+											<select required name="children_number" id="children_number" class="form-control">
 												<option>0</option>
 												<option>1</option>
 												<option>2</option>
 												<option>3</option>
 												<option>4</option>
-												<option>5</option>
-												<option>6</option>
 											</select>
 											<span class="select-arrow"></span>
 										</div>
@@ -144,14 +141,12 @@ console.log();
 									<div class="col-md-4">
 										<div class="form-group">
 											<span class="form-label">Tercera Edad (60+)</span>
-											<select name="elderly_number" id="elderly_number" class="form-control">
+											<select required name="elderly_number" id="elderly_number" class="form-control">
 												<option>0</option>
 												<option>1</option>
 												<option>2</option>
 												<option>3</option>
 												<option>4</option>
-												<option>5</option>
-												<option>6</option>
 											</select>
 											<span class="select-arrow"></span>
 										</div>
@@ -159,7 +154,7 @@ console.log();
 									<div class="col-md-4">
 										<div class="form-group">
 											<span class="form-label">Transporte</span>
-											<select  id="transports_id" name="transports_id" class="form-control">
+											<select required  id="transports_id" name="transports_id" class="form-control">
 											<option value=""> -- Primero seleccione su Destino -- </option>
        										</select>
 											<span class="select-arrow"></span>
@@ -169,7 +164,7 @@ console.log();
 									<div class="col-md-4">
 										<div class="form-group">
 											<span class="form-label">Hotel</span>
-											<select name="hotels_id" id="hotels_id" class="form-control">
+											<select required name="hotels_id" id="hotels_id" class="form-control">
 											<option value=""> -- Primero seleccione su Destino -- </option>
        										</select>
 											<span class="select-arrow"></span>
@@ -178,9 +173,9 @@ console.log();
 									<div class="col-md-4">
 										<div class="form-group">
 											<span class="form-label">¿ Desea Guía ?</span>
-											<select name="guides_id" id="guides_id" class="form-control">
+											<select required name="guides_id" id="guides_id" class="form-control">
 											
-											<option value="4">Sí</option>
+											<option value="5">Sí</option>
 											<option value="2">No</option>
        										
 											</select>

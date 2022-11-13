@@ -101,13 +101,14 @@
 
 </div>
 
+<!-- <br><button class="btn btn-primary" onclick="downloadPDF()">Descargar PDF</button><br><br> -->
 
 <p class="h2">Gráficos</p>
 <div class="container">
     <div class="row">
         <div class="col">
             <div>
-                <p class="h3">Paquetes por Mes</p>
+                <p class="h3">Paquetes por mes</p>
                 <canvas id="myChart"></canvas>
             </div>
         </div>
@@ -122,13 +123,14 @@
     <div class="row">
         <div class="col">
             <div>
-                <p class="h3">CIudades más Visitadas</p>
+                <p class="h3">Ciudades más Visitadas</p>
                 <canvas id="myChart3"></canvas>
             </div>
         </div>
         <div class="col">
             <div>
-
+             <p class="h3">Paquetes pagados por mes</p>
+                <canvas id="myChart4"></canvas>
             </div>
         </div>
     </div>
@@ -146,7 +148,7 @@
 @stop
 
 @section('js')
-<script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <?php
 
   $con = new mysqli('localhost','root','','agencia03');
@@ -164,6 +166,12 @@
   $query3 = $con->query("
   SELECT packages.to, cities.city_name as Ciudad, COUNT(*) as numPackages FROM packages INNER JOIN cities on packages.to = cities.id GROUP BY packages.to;");
 
+   //Ganancias por Mes
+   $query4 = $con->query("
+   SELECT SUM(subtotal) as Total, DATE_FORMAT(created_at, '%M', 'es_ES') as Month, count(*) as numRecords from packages where packages.status = 'Pagado' GROUP BY MonthName(created_at)ORDER BY MONTH(created_at)"
+);
+ 
+
   foreach($query as $data){
     $month[] = $data['Month'];
     $amount[] = $data['numRecords'];
@@ -177,6 +185,11 @@
   foreach($query3 as $data3){
     $city[] = $data3['Ciudad'];
     $amountPackages2[] = $data3['numPackages'];
+  }
+
+  foreach($query4 as $data4){
+    $month2[] = $data4['Month'];
+    $amountPackages3[] = $data4['Total'];
   }
 ?>
 </script>
@@ -198,6 +211,7 @@ const data = {
 const config = {
     type: 'line',
     data: data,
+    
     options: {}
 };
 </script>
@@ -291,5 +305,59 @@ const myChart3 = new Chart(
     document.getElementById('myChart3'),
     config3
 );
+</script>
+
+<!-- Cuarto Gráfico -->
+
+<script>
+const labels4 = <?php  echo json_encode($month2)?>;
+const data4 = {
+    labels: labels4,
+    datasets: [{
+        label: 'Año 2022',
+        backgroundColor: 'rgba(54, 162, 235)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: <?php echo json_encode($amountPackages3)?>,
+    }]
+};
+const config4 = {
+    type: 'bar',
+    data: data4,
+    options: {}
+};
+</script>
+
+
+<script>
+const myChart4 = new Chart(
+    document.getElementById('myChart4'),
+    config4
+);
+</script>
+
+<script>
+
+window.jsPDF = window.jspdf.jsPDF;
+
+function downloadPDF(){
+const canvas = document.getElementById("myChart");
+const canvas2 = document.getElementById("myChart2");
+const canvas3 = document.getElementById("myChart3");
+const canvas4 = document.getElementById("myChart4");
+const canvasImage = canvas.toDataURL("image/jpeg",1.0);
+const canvasImage2 = canvas3.toDataURL("image2/jpeg",1.0);
+const canvasImage3 = canvas4.toDataURL("image3/jpeg",1.0);
+const canvasImage4 = canvas4.toDataURL("image4/jpeg",1.0);
+console.log(canvasImage);
+
+let pdf = new jsPDF('landscape');
+pdf.setFontSize(20);
+pdf.addImage(canvasImage, 'PNG',15,15,270,150);
+
+pdf.text(15,15,"MI");
+pdf.save('reportes.pdf');
+
+};
+
 </script>
 @stop

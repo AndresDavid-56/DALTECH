@@ -202,6 +202,7 @@ $global = 110;
   </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script>
    $(document).ready(function () {
@@ -281,4 +282,28 @@ $global = 110;
 
 
   </script>
+
+  <!-- script>
+
+Swal.fire({
+  title: '¿ Desea Continuar ?',
+  text: "",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  cancelButtonText: 'Cancelar',
+  confirmButtonText: 'Comprar Paquete'
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire(
+      'Paquete Seleccionado!',
+      'Realice el pago para finalizar.',
+      'success'
+    )
+  }
+})
+
+  </script-- >
+  
 @stop

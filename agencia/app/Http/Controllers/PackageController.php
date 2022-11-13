@@ -12,6 +12,8 @@ use App\Models\User;
 use App\Models\Transport;
 use Carbon\Carbon;
 
+use Illuminate\Support\Facades\Crypt;
+
 class PackageController extends Controller
 {
 
@@ -106,10 +108,11 @@ class PackageController extends Controller
 
         $packages->status = $request->get('status');
 
+        //$id_ruta = Crypt::encryptString($packages->id);
 
         $packages->save();
 
-        return redirect('/createpaypal');
+        return redirect("/createpaypal?id=$packages->id");
     }
 
     /**

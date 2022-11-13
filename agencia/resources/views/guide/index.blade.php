@@ -40,8 +40,7 @@
             <form action="{{ route('guides.destroy', $guide->id)}} " method="POST">
                 <a href="guides/{{$guide->id}}/edit" class="btn btn-info">Editar</a> 
                 @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger">Borrar</button>
+               
             </form>                
         </td>
     </tr>

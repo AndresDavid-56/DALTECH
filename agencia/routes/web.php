@@ -37,18 +37,19 @@ Route::get('contact', function () {
 });
 
 //Paypal
+$ruta = base64_encode('paypal_finish');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
     
-
 route::get('createpaypal',[PaypalController::class,'createpaypal'])->name('createpaypal');
 route::get('processPaypal',[PaypalController::class,'processPaypal'])->name('processPaypal');
 route::get('processSuccess',[PaypalController::class,'processSuccess'])->name('processSuccess');
 route::get('processCancel',[PaypalController::class,'processCancel'])->name('processCancel');
-Route::get('paypal_finish', function () {
+Route::get('cGF5cGFsX2ZpbmlzaA0KDQo=', function () {
     return view('paypal_finish');})->name('paypal_finish');
 });
 
